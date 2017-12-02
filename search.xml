@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fstart%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Class对象]]></title>
+    <url>%2Fjava%2Fclass%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[概述 每个类都有一个Class对象； 类Class对象是由JVM的子系统 “类加载器”生成的。 类加载器类加载器实际上可以包含一条加载器链，但是只有一个原声类加载器，可以挂接额外类加载器 原生类加载器原生类加载的是所谓的可信类，如：JavaAPI等 额外类加载器额外类加载器用来满足自身的特殊需求，如：以某种特殊方式加载类，以支持WEB服务器应用等 类的动态加载类的动态加载分为三个步骤： 加载由类加载器执行，该步骤将查找字节码，并从字节码中创建一个Class对象 链接链接将验证类中的字节码，为静态域分配存储空间，并且如果必须的话将解析这个类创建其它类的所有引用 初始化如果该类具有超类，则对其初始化，执行静态初始化器和静态初始化块 “惰性”初始化当程序创建第一个对类的静态成员的引用时，就会 加载 该类；根据java虚拟机规范，所有java虚拟机实现必须在每个类或接口被java程序首次 主动使用 时才初始化。 主动使用有以下6种： 创建类的实例 访问某个类或者接口的静态变量，或者对该静态变量赋值;如果访问静态编译时常量(static final)不会导致类的初始化 12345678910111213141516171819202122232425262728293031323334package org.gavin.clazz;class LazyInitialization1 &#123; static final int FIELD = 0; static int FIELD1 = 1; static &#123; System.out.println("Initial"); &#125;&#125;/** * &lt;p&gt;如果 static域是final的，那么不对类进行初始化也可以进行读取； * &lt;p&gt;若 static域不是final的，那在读取之前进行链接（为这个域分配空间）和初始化（初始化该空间）。 * * @author gavin */public class ClassInitialize1 &#123; public static void main(String[] args) &#123; System.out.println("static final"); System.out.println(LazyInitialization1.FIELD); System.out.println("static"); System.out.println(LazyInitialization1.FIELD1); &#125;&#125;// 输出结果：static final0staticInitial1 调用类的静态方法（构造方法也是类的静态方法，因此使用 new关键字会被当成是对静态成员的引用） 反射（Class.forName(xxx.xxx.xxx)） 123456789101112131415161718192021222324252627282930package org.gavin.clazz;class LazyInitialization &#123; static &#123; System.out.println("Initial"); &#125;&#125;/** * &lt;p&gt;使用类字面常量 .class 来创建对Class对象的引用时，不会自动初始化该Class对象; * &lt;p&gt;但是使用 Class.forName() 会立即进行初始化。 * * @author gavin */public class ClassInitialize &#123; @SuppressWarnings("unused") public static void main(String[] args) throws ClassNotFoundException&#123; System.out.println(".class"); Class&lt;LazyInitialization&gt; clazz = LazyInitialization.class; System.out.println("Class.forName()"); Class.forName("org.gavin.clazz.LazyInitialization"); &#125;&#125;// 输出结果：.classClass.forName()Initial 初始化一个类的子类（相当于对父类的主动使用），不过直接通过子类引用父类元素，不会引起子类的初始化 123456789101112131415161718192021222324252627package org.gavin.clazz;class Parent &#123; static int field = 0; static &#123; System.out.println("parent"); &#125;&#125;class Child extends Parent&#123; static &#123; System.out.println("child"); &#125;&#125;/** *当访问一个Java类或接口的静态域时，只有真正声明这个域的类或接口才会被初始化 */public class ClassInitialize2 &#123; public static void main(String[] args) &#123; System.out.println(Child.field); &#125;&#125;// 输出结果：parent0 Java虚拟机被标明为启动类的类（包含main方法的） 获取Class对象 类字面量常量 .class 反射 Class.forName( ) 实例对象 obj.getClass 参考 Java编程思想 （14章）Java系列笔记(1) - Java 类加载与初始化]]></content>
       <categories>
-        <category>start</category>
+        <category>JAVA</category>
       </categories>
       <tags>
-        <tag>start</tag>
+        <tag>JAVA基础</tag>
       </tags>
   </entry>
 </search>
