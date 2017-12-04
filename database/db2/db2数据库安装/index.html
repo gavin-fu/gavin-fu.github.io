@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gavin&#39;s Blog">
 <meta property="og:description" content="环境OS: CentOS 7DB2: Express-C v10.1 (db2_v101_linuxx64_expc.tar.gz)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-04T16:23:47.442Z">
+<meta property="og:updated_time" content="2017-12-04T16:35:33.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DB2数据库安装">
 <meta name="twitter:description" content="环境OS: CentOS 7DB2: Express-C v10.1 (db2_v101_linuxx64_expc.tar.gz)">
@@ -434,7 +434,7 @@
 </ol>
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="实例安装"><a href="#实例安装" class="headerlink" title="实例安装"></a>实例安装</h3><ol>
 <li><p>创建实例相关用户<br>在Linux/Unix上创建实例时必须有与实例同名用户存在；<br>实例用户的home目录，是创建实例的位置；<br>受防护用户(db2fenc1)与应用开发相关，但是作为创建实例却是必须的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行一下命令</span><br><span class="line">groupadd -g 2000 db2iadm1                 # 实例用户组</span><br><span class="line">groupadd -g 2001 db2fadm1                 # 受防护组</span><br><span class="line">useradd -m -u 2000 -g db2iadm1 db2inst1   # 实例用户</span><br><span class="line">useradd -m -u 2001 -g db2fadm1 db2fenc1   # 受防护用户</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">groupadd -g 2000 db2iadm1                 # 实例用户组</span><br><span class="line">groupadd -g 2001 db2fadm1                 # 受防护组</span><br><span class="line">useradd -m -u 2000 -g db2iadm1 db2inst1   # 实例用户</span><br><span class="line">useradd -m -u 2001 -g db2fadm1 db2fenc1   # 受防护用户</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实例安装<br>可以直接键入 ./db2icrt 获取命令帮助信息；<br>Linux/Unix下 <strong>/home/实例用户/sqllib/</strong> 目录为实例目录，实例目录一旦创建不能更改其位置。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">  cd /opt/ibm/db2/V10.1/instance            # 实例安装目录</span><br><span class="line">  ./db2icrt -p 50000 -u db2fenc1 db2inst1   # 实例安装-p &lt;端口号&gt; -u &lt;受防护用户&gt; &lt;实例用户&gt;</span><br></pre></td></tr></table></figure>
@@ -491,7 +491,7 @@
 </li>
 </ol>
 <h3 id="表空间设计原则"><a href="#表空间设计原则" class="headerlink" title="表空间设计原则"></a>表空间设计原则</h3><ol>
-<li>对于 OLAP分析型应用，以连续大片读为主，采用较大的也面，降低 I/O请求次数；</li>
+<li>对于 OLAP分析型应用，以连续大片读为主，采用较大的页面，降低 I/O请求次数；</li>
 <li>选择 DMS大型表空间，可以灵活定义；</li>
 <li>设置预读大小：可以在创建表空间的时候，将 PrefetchSize设置为 Automatic，预读操作在查询使用所需的数据之前读入这些数据，<br>因为这些数据已经在内容中了，这样就不必等待执行 I/O了；</li>
 <li>数据和索引使用不同的表空间；</li>
@@ -506,7 +506,7 @@
 <p>示例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BUFFERPOLL MYBUFFER16K <span class="keyword">SIZE</span> <span class="keyword">AUTOMATIC</span> PAGESIZE <span class="number">16</span>K;</span><br></pre></td></tr></table></figure></p>
 <h3 id="缓冲池相关操作"><a href="#缓冲池相关操作" class="headerlink" title="缓冲池相关操作"></a>缓冲池相关操作</h3><ol>
 <li><p>修改缓冲池  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  ALTER BUFFERPOOL &lt;name&gt; SIZE &lt;tgt_size&gt;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER BUFFERPOOL &lt;name&gt; SIZE &lt;tgt_size&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看缓冲池  </p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>      T2.TBSPACE</span><br><span class="line">            ,T1.*</span><br><span class="line"><span class="keyword">FROM</span>        SYSCAT.BUFFERPOOLS T1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span>  SYSCAT.TABLESPACES T2</span><br><span class="line"><span class="keyword">ON</span>          T1.BUFFERPOOLID = T2.BUFFERPOOLID</span><br></pre></td></tr></table></figure>
