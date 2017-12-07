@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Class对象, 类加载" />
+  <meta name="keywords" content="gavin, blog" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="概述 每个类都有一个Class对象； 类Class对象是由JVM的子系统 “类加载器”生成的。">
-<meta name="keywords" content="Class对象, 类加载">
+<meta name="description" content="实例相关操作实例相关命令12345678db2ilist                              # 列出实例db2start                              # 启动实例db2stop [force]                       # 停止实例db2 forc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Class对象">
-<meta property="og:url" content="http://yoursite.com/java/class对象/index.html">
+<meta property="og:title" content="Db2体系结构">
+<meta property="og:url" content="http://yoursite.com/uncategorized/db2体系结构/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="概述 每个类都有一个Class对象； 类Class对象是由JVM的子系统 “类加载器”生成的。">
+<meta property="og:description" content="实例相关操作实例相关命令12345678db2ilist                              # 列出实例db2start                              # 启动实例db2stop [force]                       # 停止实例db2 force application all             # 强制中断实例下所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-04T12:55:17.425Z">
+<meta property="og:updated_time" content="2017-12-07T13:01:03.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Class对象">
-<meta name="twitter:description" content="概述 每个类都有一个Class对象； 类Class对象是由JVM的子系统 “类加载器”生成的。">
+<meta name="twitter:title" content="Db2体系结构">
+<meta name="twitter:description" content="实例相关操作实例相关命令12345678db2ilist                              # 列出实例db2start                              # 启动实例db2stop [force]                       # 停止实例db2 force application all             # 强制中断实例下所">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/java/class对象/"/>
+  <link rel="canonical" href="http://yoursite.com/uncategorized/db2体系结构/"/>
 
 
 
 
 
-  <title>Class对象 | Gavin's Blog</title>
+  <title>Db2体系结构 | Gavin's Blog</title>
   
 
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/class对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/db2体系结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -324,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Class对象</h1>
+          <h1 class="post-title" itemprop="name headline">Db2体系结构</h1>
         
 
         <div class="post-meta">
@@ -336,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T05:23:20+08:00">
-                2017-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T20:59:59+08:00">
+                2017-12-07
               </time>
             
 
@@ -347,28 +346,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">JAVA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -377,8 +354,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/java/class对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/java/class对象/" itemprop="commentsCount"></span>
+                <a href="/uncategorized/db2体系结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/uncategorized/db2体系结构/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -411,59 +388,78 @@
       
 
       
-        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
-<li>每个类都有一个Class对象；</li>
-<li>类Class对象是由JVM的子系统 “类加载器”生成的。<a id="more"></a>
+        <h3 id="实例相关操作"><a href="#实例相关操作" class="headerlink" title="实例相关操作"></a>实例相关操作</h3><h4 id="实例相关命令"><a href="#实例相关命令" class="headerlink" title="实例相关命令"></a>实例相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db2ilist                              # 列出实例</span><br><span class="line">db2start                              # 启动实例</span><br><span class="line">db2stop [force]                       # 停止实例</span><br><span class="line">db2 force application all             # 强制中断实例下所有连接</span><br><span class="line">db2iauto -[on | off] &lt;instance_name&gt;  # 自动起停实例</span><br><span class="line">db2 attach to &lt;instance_name&gt;         # 连接实例</span><br><span class="line">db2 detach / db2 terminate            # 断开实例</span><br><span class="line">db2idorp &lt;instance_name&gt;              # 删除实例 (需要root权限)</span><br></pre></td></tr></table></figure>
+<h4 id="配置实例"><a href="#配置实例" class="headerlink" title="配置实例"></a>配置实例</h4><ul>
+<li><p>配置注册变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db2set -all                                         # 查看当前注册变量设置</span><br><span class="line">db2set -lr                                          # 查询所有注册变量</span><br><span class="line">db2set &lt;parameter&gt;=&lt;value&gt; [-i instance_name | -g]  # 设置注册变量</span><br><span class="line">                                                    # [i] 实例级注册变量</span><br><span class="line">                                                    # [g] 全局级注册变量</span><br><span class="line">                                                    # [e] 操作系统级注册变量        </span><br><span class="line"># eg</span><br><span class="line">db2set DB2COMM=TCPIP</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置数据库管理配置文件  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db2 get dbm cfg                                     # 获取当前实例数据库管理文件配置</span><br><span class="line">db2 reset dbm cfg                                   # 恢复默认配置</span><br><span class="line">db2 update dbm cfg using &lt;parameter_name&gt; &lt;value&gt;   # 配置当前实例数据库管理文件参数</span><br><span class="line"><span class="meta">#</span> eg  </span><br><span class="line">db2 update dbm cfg using SVCENAME=50000</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="DB2INSTANCE-变量"><a href="#DB2INSTANCE-变量" class="headerlink" title="DB2INSTANCE 变量"></a>DB2INSTANCE 变量</h4><p>该变量主要用于实例间切换，但在Linux/Unix系统下实例名即为实例用户名，因此直接使用不同实例用户登陆进行实例切换<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $DB2INSTANCE               # 输出变量值</span><br><span class="line">set DB2INSTANCE=&lt;instance_name&gt; # 设置变量值</span><br><span class="line">get instance                    # 获取当前实例</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>创建数据库时默认生成三个表空间 SYSCATSPACE、TEMPSPACE1、USERSPACE1<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;                           <span class="comment">-- 创建数据库</span></span><br><span class="line">    <span class="keyword">AUTOMATIC</span> <span class="keyword">STORAGE</span> &lt;YES | <span class="keyword">NO</span>&gt;                    <span class="comment">-- 是否自动存储</span></span><br><span class="line">    <span class="keyword">ON</span> &lt;<span class="keyword">path</span> | drive&gt;                               <span class="comment">-- 数据库路径</span></span><br><span class="line">    <span class="keyword">ALIAS</span> &lt;db_alias&gt;                                <span class="comment">-- 别名</span></span><br><span class="line">    <span class="keyword">USING</span> CODESET &lt;code&gt; TERRITORY &lt;territory&gt;      <span class="comment">-- 代码页</span></span><br><span class="line">    <span class="keyword">COLLATE</span> <span class="keyword">USING</span> &lt;<span class="keyword">SYSTEM</span> | <span class="keyword">IDENTITY</span> | ...&gt;         <span class="comment">-- 整理次序</span></span><br><span class="line">    <span class="keyword">CATALOG</span> <span class="keyword">TABLESPACE</span> &lt;tablespace_option&gt;          <span class="comment">-- 系统编目表空间</span></span><br><span class="line">    <span class="keyword">USER</span> <span class="keyword">TABLESPACE</span> &lt;tablespace_option&gt;             <span class="comment">-- 用户表空间</span></span><br><span class="line">    <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> &lt;tablespace_option&gt;        <span class="comment">-- 临时表空间</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">-- 大写为关键字</span></span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">test</span> </span><br><span class="line">    <span class="keyword">automatic</span> <span class="keyword">storage</span> yes <span class="keyword">on</span> /<span class="keyword">data</span>/db2/test_data    <span class="comment">-- 使用自动存储管理</span></span><br><span class="line">    dbpath <span class="keyword">on</span> /<span class="keyword">data</span>/db2/test_log                    <span class="comment">-- 指定数据库的事物日志存储路径</span></span><br><span class="line">    <span class="keyword">using</span> codeset utf<span class="number">-8</span>                             <span class="comment">-- 指定字符集</span></span><br><span class="line">    territory CN                                    <span class="comment">-- 决定数据库的时间和日期格式为中文</span></span><br><span class="line">    pagesize <span class="number">16</span> k                                   <span class="comment">-- 数据库默认页大小</span></span><br><span class="line">    <span class="keyword">alias</span> <span class="keyword">test</span>;                                     <span class="comment">-- 别名</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="数据库相关操作"><a href="#数据库相关操作" class="headerlink" title="数据库相关操作"></a>数据库相关操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db2 list database directory         # 列出当前实例下所有数据库</span><br><span class="line">db2 drop database &lt;database_name&gt;   # 删除数据库</span><br></pre></td></tr></table></figure>
+<h2 id="表空间"><a href="#表空间" class="headerlink" title="表空间"></a>表空间</h2><p>DB2表空间管理类型</p>
+<ul>
+<li>SMS (System Managed Space)</li>
+<li>DMS (Database Managed Space)</li>
+<li>DMS自动存储</li>
+</ul>
+<h3 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h3><ol>
+<li><p>创建用户表空间</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- SMS</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> &lt;<span class="keyword">name</span>&gt; <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">SYSTEM</span> <span class="keyword">USING</span> (<span class="string">'&lt;path&gt;'</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">-- DMS</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> &lt;<span class="keyword">name</span>&gt; <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">DATABASE</span> <span class="keyword">USING</span> (DEVICE | <span class="keyword">FILE</span> <span class="string">'&lt;path&gt;'</span>);  </span><br><span class="line"></span><br><span class="line">- DMS自动存储</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> &lt;<span class="keyword">name</span>&gt;;  </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> &lt; <span class="keyword">name</span> &gt; <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">AUTOMATIC</span> <span class="keyword">STORAGE</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建系统临时表空间  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SYSTEM</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> tmp_tbsp <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">SYSTEM</span> <span class="keyword">USING</span> (<span class="string">'/data/tmp_tbsp'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户临时表空间</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> usr_tbsp <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">DATABASE</span> <span class="keyword">USING</span> (<span class="keyword">FILE</span> <span class="string">'/data/usr_tbsp'</span> <span class="number">5000</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h3><p>类加载器实际上可以包含一条加载器链，但是只有一个<em>原声类加载器</em>，可以挂接额外类加载器</p>
-<ol>
-<li><p>原生类加载器<br>原生类加载的是所谓的<em>可信类</em>，如：JavaAPI等</p>
+<p>示例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> tbs_temp</span><br><span class="line">    PAGESIZE <span class="number">16</span>K </span><br><span class="line">    <span class="keyword">MANAGED</span> <span class="keyword">BY</span> <span class="keyword">DATABASE</span> <span class="keyword">USING</span>（<span class="keyword">FILE</span> <span class="string">'/data/'</span> <span class="number">1000</span>）</span><br><span class="line">    EXTENTSIZE <span class="number">32</span> </span><br><span class="line">    OVERHEAD <span class="number">10.67</span> </span><br><span class="line">    PREFECHSIZE <span class="number">32</span></span><br><span class="line">    TRANSFERRATE <span class="number">0.04</span> </span><br><span class="line">    BUFFERPOOL MYBUFFER16K；</span><br></pre></td></tr></table></figure></p>
+<h3 id="表空间相关操作"><a href="#表空间相关操作" class="headerlink" title="表空间相关操作"></a>表空间相关操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 1. 查看表空间</span><br><span class="line">db2 list tablespaces [show detail]                  # 查看表空间</span><br><span class="line">db2 list tablespace  containers for &lt;tablespace_id&gt; # 查看表空间及容器属性</span><br><span class="line"></span><br><span class="line"># 2. 修改表空间</span><br><span class="line">#   2.1. SMS表空间只能增加容器；</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; ADD(DEVICE &apos;&lt;path&gt;&apos; &lt;size&gt;, FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);</span><br><span class="line"></span><br><span class="line">#   2.2. DMS表空间可以调整容器；</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; REDUCE (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 缩小</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; EXTEND (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 增大</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; RESIZE (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 调增 （可调小或调大）</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; DROP (FILE &apos;filename&apos;, DEVICE &apos;path&apos;);  # 删除DMS容器</span><br><span class="line"></span><br><span class="line">#   2.3. 自动存储表空间不能手动调整大小；</span><br><span class="line"></span><br><span class="line"># 3. 重命名表空间</span><br><span class="line">RENAME TABLESPACE &lt;srcName&gt; TO &lt;tgtName&gt;;</span><br><span class="line"></span><br><span class="line"># 4. 将表空间从托机状态切换至联机状态</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; SWITCH ONLINE;</span><br><span class="line"></span><br><span class="line"># 5. 删除表空间</span><br><span class="line">DROP TABLESPACE &lt;name&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="表空间注意事项"><a href="#表空间注意事项" class="headerlink" title="表空间注意事项"></a>表空间注意事项</h3><ol>
+<li><p>表空间类型选择（SYSTEM / DATABASE）  </p>
 </li>
-<li><p>额外类加载器<br>额外类加载器用来满足自身的特殊需求，如：以某种特殊方式加载类，以支持WEB服务器应用等</p>
+<li><p>选择合适的页大小(PAGESIZE)  </p>
+</li>
+<li><p>扩展数据块大小（EXTENTSIZE）  </p>
+</li>
+<li><p>预读大小选择（PREFECHSIZE）<br>PREFECHSIZE = 表空间容器设备数 * 扩展数据块带小  </p>
+</li>
+<li><p>文件系统和裸设备（CIO/DIO）  </p>
+</li>
+<li><p>设置 <strong>容器开销</strong> 和 <strong>传送速率</strong>（OVERHEAD / TRANSFERRATE）<br> 这两个参数用于确定查询优化期间的 I/O 成本，是所有容器的平均值，单位毫秒。</p>
+<ul>
+<li>Overhead = 平均寻道时间 + (((1 / 磁盘转速) <em> 60 </em> 1000) / 2)  </li>
+<li>Transferrate = (1 / 传送速率) <em> 1000 / 1024000 </em> 4096(假设用4K页)  </li>
+</ul>
 </li>
 </ol>
-<h3 id="类的动态加载"><a href="#类的动态加载" class="headerlink" title="类的动态加载"></a>类的动态加载</h3><p>类的动态加载分为三个步骤：</p>
-<ol>
-<li><p>加载<br>由类加载器执行，该步骤将查找字节码，并从字节码中创建一个Class对象</p>
+<h3 id="表空间设计原则"><a href="#表空间设计原则" class="headerlink" title="表空间设计原则"></a>表空间设计原则</h3><ol>
+<li>对于 OLAP分析型应用，以连续大片读为主，采用较大的页面，降低 I/O请求次数；</li>
+<li>选择 DMS大型表空间，可以灵活定义；</li>
+<li>设置预读大小：可以在创建表空间的时候，将 PrefetchSize设置为 Automatic，预读操作在查询使用所需的数据之前读入这些数据，<br>因为这些数据已经在内容中了，这样就不必等待执行 I/O了；</li>
+<li>数据和索引使用不同的表空间；</li>
+<li>每个表空间使用独立的缓冲池；</li>
+</ol>
+<h2 id="缓冲池"><a href="#缓冲池" class="headerlink" title="缓冲池"></a>缓冲池</h2><ol>
+<li>每个表空间都会与特定的缓冲池相关；  </li>
+<li>想要表空间与缓冲池相关，该缓冲池与表空间必须具有相同的页大小；  </li>
+<li>表空间与缓冲池关联是在使用 CREATE TABLESPACE 语句创建表空间时定义的，但是可以使用 ALTER TABLESPACE 语句更改关联。  </li>
+</ol>
+<h3 id="创建缓冲池"><a href="#创建缓冲池" class="headerlink" title="创建缓冲池"></a>创建缓冲池</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BUFFERPOOL &lt;bufferpool_name&gt;     <span class="comment">-- 缓冲池名称</span></span><br><span class="line">    <span class="keyword">SIZE</span> &lt;<span class="keyword">AUTOMATIC</span> | size_number&gt;      <span class="comment">-- 缓冲池大小，即页数</span></span><br><span class="line">    PAGESIZE &lt;pagesize&gt;                 <span class="comment">-- 缓冲池页大小</span></span><br><span class="line">    <span class="keyword">BLOCKSIZE</span> &lt;<span class="built_in">number</span>&gt;                  <span class="comment">-- 可选参数： 指定每个块的大小，即在一次块I/O中从磁盘读取的页的数量。应该等于正在使用缓冲池的表空间的 EXTENTSIZE 的整数倍。</span></span><br><span class="line">    NUMBLOCKPAGES &lt;<span class="built_in">number</span>&gt;              <span class="comment">-- 可选参数： 定义块内存大小。应该是 BLOCKSIZE 的倍数，并且不能大于缓冲池页面数量的 98%。</span></span><br></pre></td></tr></table></figure>
+<p>示例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BUFFERPOLL MYBUFFER16K <span class="keyword">SIZE</span> <span class="keyword">AUTOMATIC</span> PAGESIZE <span class="number">16</span>K;</span><br></pre></td></tr></table></figure></p>
+<h3 id="缓冲池相关操作"><a href="#缓冲池相关操作" class="headerlink" title="缓冲池相关操作"></a>缓冲池相关操作</h3><ol>
+<li><p>修改缓冲池  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER BUFFERPOOL &lt;name&gt; SIZE &lt;tgt_size&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>链接<br>链接将验证类中的字节码，为静态域分配存储空间，并且如果必须的话将解析这个类创建其它类的所有引用</p>
-</li>
-<li><p>初始化<br>如果该类具有超类，则对其初始化，执行静态初始化器和静态初始化块</p>
+<li><p>查看缓冲池  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>      T2.TBSPACE</span><br><span class="line">            ,T1.*</span><br><span class="line"><span class="keyword">FROM</span>        SYSCAT.BUFFERPOOLS T1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span>  SYSCAT.TABLESPACES T2</span><br><span class="line"><span class="keyword">ON</span>          T1.BUFFERPOOLID = T2.BUFFERPOOLID</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="“惰性”初始化"><a href="#“惰性”初始化" class="headerlink" title="“惰性”初始化"></a>“惰性”初始化</h3><p>当程序创建第一个对类的静态成员的引用时，就会 <strong>加载</strong> 该类；<br>根据java虚拟机规范，所有java虚拟机实现必须在每个类或接口被java程序首次 <strong>主动使用</strong> 时才初始化。</p>
-<p><strong>主动使用有如下几种</strong></p>
-<ul>
-<li><p>创建类的实例</p>
-</li>
-<li><p>访问某个类或者接口的静态域（静态变量、方法）</p>
-<ul>
-<li>如果访问静态编译时常量(static final)不会导致类的初始化</li>
-<li>构造方法也是类的静态方法，因此使用 new关键字会被当成是对静态成员的引用</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.gavin.clazz;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LazyInitialization1</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> FIELD = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> FIELD1 = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"Initial"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;如果 static域是final的，那么不对类进行初始化也可以进行读取；</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;若 static域不是final的，那在读取之前进行链接（为这个域分配空间）和初始化（初始化该空间）。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> gavin </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassInitialize1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"static final"</span>);</span><br><span class="line">        System.out.println(LazyInitialization1.FIELD);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"static"</span>);</span><br><span class="line">        System.out.println(LazyInitialization1.FIELD1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果：</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="keyword">static</span></span><br><span class="line">Initial</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>反射（Class.forName(xxx.xxx.xxx)）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.gavin.clazz;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LazyInitialization</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"Initial"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;使用类字面常量 .class 来创建对Class对象的引用时，不会自动初始化该Class对象;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;但是使用 Class.forName() 会立即进行初始化。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> gavin </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassInitialize</span> </span>&#123;</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unused"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">".class"</span>);</span><br><span class="line">        Class&lt;LazyInitialization&gt; clazz = LazyInitialization.class;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Class.forName()"</span>);</span><br><span class="line">        Class.forName(<span class="string">"org.gavin.clazz.LazyInitialization"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果：</span></span><br><span class="line">.class</span><br><span class="line">Class.forName()</span><br><span class="line">Initial</span><br></pre></td></tr></table></figure>
-<ul>
-<li>初始化一个类的子类（相当于对父类的主动使用），不过直接通过子类引用父类元素，不会引起子类的初始化</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.gavin.clazz;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> field = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"parent"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"child"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *当访问一个Java类或接口的静态域时，只有真正声明这个域的类或接口才会被初始化</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassInitialize2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(Child.field);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果：</span></span><br><span class="line">parent</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Java虚拟机被标明为启动类的类（包含main方法的类）</li>
-</ul>
-<h3 id="获取Class对象"><a href="#获取Class对象" class="headerlink" title="获取Class对象"></a>获取Class对象</h3><ol>
-<li>类字面量常量 <strong>.class</strong></li>
-<li>反射 <strong>Class.forName( )</strong></li>
-<li>实例对象 <strong>obj.getClass</strong></li>
-</ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
-<p>Java编程思想 （14章）<br><a href="http://www.cnblogs.com/zhguang/p/3154584.html" target="_blank" rel="noopener">Java系列笔记(1) - Java 类加载与初始化</a></p>
-</blockquote>
 
       
     </div>
@@ -479,12 +475,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/java基础/" rel="tag"># JAVA基础</a>
-          
-        </div>
-      
 
       
       
@@ -494,14 +484,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/database/db2/db2数据库安装/" rel="next" title="DB2数据库安装">
+                <i class="fa fa-chevron-left"></i> DB2数据库安装
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/sql/sql脚本开发规范/" rel="prev" title="SQL脚本开发规范">
-                SQL脚本开发规范 <i class="fa fa-chevron-right"></i>
+              <a href="/uncategorized/virtualbox共享文件夹/" rel="prev" title="Virtualbox共享文件夹">
+                Virtualbox共享文件夹 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -612,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -661,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器"><span class="nav-number">2.</span> <span class="nav-text">类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的动态加载"><span class="nav-number">3.</span> <span class="nav-text">类的动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“惰性”初始化"><span class="nav-number">4.</span> <span class="nav-text">“惰性”初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取Class对象"><span class="nav-number">5.</span> <span class="nav-text">获取Class对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例相关操作"><span class="nav-number">1.</span> <span class="nav-text">实例相关操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例相关命令"><span class="nav-number">1.1.</span> <span class="nav-text">实例相关命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置实例"><span class="nav-number">1.2.</span> <span class="nav-text">配置实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DB2INSTANCE-变量"><span class="nav-number">1.3.</span> <span class="nav-text">DB2INSTANCE 变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number"></span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库相关操作"><span class="nav-number">2.</span> <span class="nav-text">数据库相关操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表空间"><span class="nav-number"></span> <span class="nav-text">表空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表空间"><span class="nav-number">1.</span> <span class="nav-text">创建表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间相关操作"><span class="nav-number">2.</span> <span class="nav-text">表空间相关操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间注意事项"><span class="nav-number">3.</span> <span class="nav-text">表空间注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间设计原则"><span class="nav-number">4.</span> <span class="nav-text">表空间设计原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓冲池"><span class="nav-number"></span> <span class="nav-text">缓冲池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建缓冲池"><span class="nav-number">1.</span> <span class="nav-text">创建缓冲池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲池相关操作"><span class="nav-number">2.</span> <span class="nav-text">缓冲池相关操作</span></a></li></ol></div>
             
 
           </div>
