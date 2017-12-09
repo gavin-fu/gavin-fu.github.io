@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux磁盘操作]]></title>
+    <url>%2Flinux%2Flinux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[Linux下磁盘分区、格式化、挂载 本文中的命令需要以 root用户操作 磁盘分区使用 fdisk命令进行磁盘分区 (无法处理大于2TB以上的磁盘分区，若磁盘大于2TB可使用 parted命令)12345678910fdisk -l # 找出需要分区的磁盘名称fdisk /dev/sdb # /dev/sdb 后面不要接数字# fdisk常用操作# m print this menu # 查看 fdisk帮助手册# d delete a partition # 删除分区# n add a new partition # 新增分区# p print the partition table # 打印分区信息# q quit without saving changes # 退出 fdisk，不保存当前操作# w write table to disk and exit # 保存退出 若使用 fdisk分区保存之后若发现找不到分区，可使执行如下命令1partproba # 强制让内核重新加载分区表 分区注意事项： 一个磁盘仅能存在4个主分区，当磁盘分配了4个主分区后将不能继续对磁盘进行分区； 一个磁盘仅能存在1个扩展分区，扩展分区下可以分配多个逻辑分区； 磁盘下需要分配多个分区的方式：3个主分区 + 1个扩展分区， 扩展分区下继续分配逻辑分区； 格式化分区使用 mkfs综合命令进行磁盘分区12345mkfs [tab] [tab] # 当前系统可格式化的文件系统类型mkfs.&lt;FileSystem&gt; -help # 查看帮助，&lt;FileSystem&gt;替换成具体的文件系统名，如： ext4# 示例：mkfs.ext4 -c /dev/sdb1 # -c 格式化指定分区 sdb1 挂载使用 mount挂载设备文件123456789101112mount -amount [-t 文件系统] [-L Label名] [-o 额外选项] [-n] 设备文件名 挂载点# 参数： -a 根据 /etc/fstab的内容，将所有未挂载的磁盘都挂载上来 -t 指定挂载的文件系统类型，如挂载磁盘： -t iso9660 -n 不将挂载信息写入 /etc/mtab中 -L 使用文件系统的卷标名进行挂载 -o 挂载额外参数（default: rw, suid, dev, exec, auto, nouser, and async）# 示例：mount /dev/sdb1 /opt/ 使用 umount卸载设备文件12345678umount [-fn] 设备文件名称/挂载点# 参数： -f 强制卸载 -n 不更新 /etc/tmap# 示例：umount /dev/sdb1 设置开机挂载设置开机挂载只需要将挂载信息写入 /etc/fstab文件中即可，该文件挂载项有6个字段，分别如下： 第一列： 设备文件名/设备Label 第二列： 挂载点 第三列： 磁盘分区的文件系统 第四列： 文件系统参数 （mount -o 指定的额外参数）， 参数详情 第五列： 能否被 dump备份命令作用（0： 不做 dump备份 / 1： 每天进行 dump操作） 第六列： 是否以 fsck检查扇区（0：不检查 / 1：较早检查 / 2：需要检查） 文件系统参数 参数 说明 ro/rw 挂载文件系统成为只读(ro) 或可擦写(rw) async/sync 此文件系统是否使用同步写入 (sync) 或异步 (async) 的内存机制。默认为 async。 auto/noauto 允许此 partition 被以 mount -a 自动挂载(auto) dev/nodev 是否允许此 partition 上，可创建装置文件？ dev 为可允许 suid/nosuid 是否允许此 partition 含有 suid/sgid 的文件格式？ exec/noexec 是否允许此 partition 上拥有可运行 binary 文件？ user/nouser 是否允许此 partition 让任何使用者运行 mount ？一般来说，mount 仅有 root 可以进行，但下达 user 参数，则可让一般 user 也能够对此 partition 进行 mount 。 defaults 默认值为：rw, suid, dev, exec, auto, nouser, and async remount 重新挂载，这在系统出错，或重新升级参数时，很有用 挂载分区注意事项 单个文件系统不应挂载到多个挂载点（目录）中； 单个挂载点不应重复挂载多个文件系统； 应当使用空目录作为挂载点；若挂载点不为空目录，那么挂载了文件系统后，原目录下的文件将会暂时消失，直至卸载该文件系统]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Virtualbox共享文件夹]]></title>
     <url>%2Fvirtualbox%2Fvirtualbox%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%2F</url>
     <content type="text"><![CDATA[配置 VirtualBox共享文件夹 环境 VirtualBox 5.2.2 CentOS7 添加虚拟光驱在 VirtualBox管理器中选择需要设置共享文件夹的虚拟机（虚拟机必须关闭），并进行如下操作：1设置 -&gt; 存储 -&gt; 控制器IDE -&gt; 添加 虚拟 光驱 -&gt; 留空 安装增强功能 启动虚拟机，然后在 VirtualBox菜单栏选中 “设备 -&gt; 安装增强功能”此操作将挂载 VirtualBox工具包至虚拟机中（CentOS7 默认挂载至: /run/media/user/VBox_GAs_5.2.2） 安装增强工具包 123cd /run/media/gavin/VBox_GAs_5.2.2sudo ./VBoxLinuxAdditions.run # 安装增强工具包sudo reboot # 重启虚拟机 设置共享文件夹在 VirtualBox管理器中进行如下操作：1设置 -&gt; 共享文件夹 -&gt; 右键选择 &quot;固定分配&quot; -&gt; 添加共享文件夹 注：不要选择 “自动挂载”， 否则挂载共享文件夹会出现错误：/sbin/mount.vboxsf: mounting failed with the error: Protocol error 挂载共享文件夹登入虚拟机，执行如下命令：123su - # root用户操作mkdir /mnt/shared # 创建挂载目录mount -t vboxsf share /mnt/shared # 挂载共享文件夹 若要自动挂载，可在 /etc/fstab 中新增挂载项:1share /mnt/shared vboxsf defaults 0 0 注：共享文件夹与虚拟机挂载目录名字不要相同]]></content>
@@ -42,7 +53,7 @@
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>JAVA基础</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
 </search>
