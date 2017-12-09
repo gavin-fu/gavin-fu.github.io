@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gavin&#39;s Blog">
 <meta property="og:description" content="安装DB2数据库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T15:17:01.069Z">
+<meta property="og:updated_time" content="2017-12-09T10:23:31.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DB2数据库安装">
 <meta name="twitter:description" content="安装DB2数据库">
@@ -360,7 +360,7 @@
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/database/" itemprop="url" rel="index">
-                    <span itemprop="name">database</span>
+                    <span itemprop="name">Database</span>
                   </a>
                 </span>
 
@@ -371,7 +371,7 @@
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/database/db2/" itemprop="url" rel="index">
-                    <span itemprop="name">db2</span>
+                    <span itemprop="name">DB2</span>
                   </a>
                 </span>
 
@@ -433,8 +433,23 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">groupadd -g 2000 db2iadm1                 # 实例用户组</span><br><span class="line">groupadd -g 2001 db2fadm1                 # 受防护组</span><br><span class="line">useradd -m -u 2000 -g db2iadm1 db2inst1   # 实例用户</span><br><span class="line">useradd -m -u 2001 -g db2fadm1 db2fenc1   # 受防护用户</span><br></pre></td></tr></table></figure>
 <p><strong>2. 实例安装</strong><br>可以直接键入 ./db2icrt 获取命令帮助信息；<br>Linux/Unix下 <strong>/home/实例用户/sqllib/</strong> 目录为实例目录，实例目录一旦创建不能更改其位置。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">cd /opt/ibm/db2/V10.1/instance            # 实例安装目录</span><br><span class="line">./db2icrt -p 50000 -u db2fenc1 db2inst1   # 实例安装-p &lt;端口号&gt; -u &lt;受防护用户&gt; &lt;实例用户&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">test</span> </span><br><span class="line">    <span class="keyword">automatic</span> <span class="keyword">storage</span> yes <span class="keyword">on</span> /<span class="keyword">data</span>/db2/test_data    <span class="comment">-- 使用自动存储管理</span></span><br><span class="line">    dbpath <span class="keyword">on</span> /<span class="keyword">data</span>/db2/test_log                    <span class="comment">-- 指定数据库的事物日志存储路径</span></span><br><span class="line">    <span class="keyword">using</span> codeset utf<span class="number">-8</span>                             <span class="comment">-- 指定字符集</span></span><br><span class="line">    territory CN                                    <span class="comment">-- 决定数据库的时间和日期格式为中文</span></span><br><span class="line">    pagesize <span class="number">8</span> k                                    <span class="comment">-- 数据库默认页大小</span></span><br><span class="line">    <span class="keyword">alias</span> <span class="keyword">test</span>;                                     <span class="comment">-- 别名</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置DB2运行环境"><a href="#配置DB2运行环境" class="headerlink" title="配置DB2运行环境"></a>配置DB2运行环境</h2><p>可以通过引用 InstanceHome/sqllib/db2profile 文件来配置其他用户 DB2 运行环境<br>在用户目录下 .bash_profile 文件中加入如下配置<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /home/db2inst1/sqllib/db2profile ]; then</span><br><span class="line">  . /home/db2inst1/sqllib/db2profile</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><p>使用db2实例用户创建数据库<br><strong>1. 创建数据库目录</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su -                                    # root用户</span><br><span class="line">mkdir /data/db2/data                    # 创建数据库目录</span><br><span class="line">mkdir /data/db2/log                     # 创建数据库事物日志目录</span><br><span class="line">chown -R db2inst1:db2inst1 /data/db2/   # 赋权给 db2实例用户</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. 创建数据库</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">su - db2inst1                           # db2inst1用户   </span><br><span class="line">db2start                                # 启动实例</span><br><span class="line">                                        # 创建数据库</span><br><span class="line">db2 "create database test </span><br><span class="line">        automatic storage yes on /data/db2/data</span><br><span class="line">        dbpath on /data/db2/log </span><br><span class="line">        using codeset utf-8 </span><br><span class="line">        territory CN </span><br><span class="line">        pagesize 8 k"</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置-DB2运行环境"><a href="#配置-DB2运行环境" class="headerlink" title="配置 DB2运行环境"></a>配置 DB2运行环境</h2><p>可以通过引用 InstanceHome/sqllib/db2profile 文件来配置其他用户 DB2 运行环境<br>在用户目录下 .bash_profile 文件中加入如下配置<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /home/db2inst1/sqllib/db2profile ]; then</span><br><span class="line">  . /home/db2inst1/sqllib/db2profile</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置-DB2服务器的-TCP-IP通信"><a href="#配置-DB2服务器的-TCP-IP通信" class="headerlink" title="配置 DB2服务器的 TCP/IP通信"></a>配置 DB2服务器的 TCP/IP通信</h2><p><strong>1. 标识 “服务名称”和 “连接端口” 或 仅标识 ”连接端口”</strong>  </p>
+<ul>
+<li>方式一： 标识 ”连接服务名称” 和 “连接端口”</li>
+</ul>
+<p>在 数据库管理器配置文件 中的 SVCENAME（服务名）指定 “服务名称”<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db2 get dbm cfg | grep SVCENAME #获取当前数据库管理器配置文件中服务名</span><br><span class="line">db2 update dbm cfg using SVCENAME db2inst1 #设置数据库管理器配置文件中服务名为： db2inst1</span><br></pre></td></tr></table></figure></p>
+<p>在 /etc/services 配置文件中添加与修改后服务名称一致的对应端口号<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2inst1    50000/tcp</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>方式二： 仅标识 “连接端口”</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2 update dbm cfg using SVCENAME 50000</span><br></pre></td></tr></table></figure>
+<p><strong>2. 设置服务器的通信协议</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2set DB2COMM=tcpip</span><br></pre></td></tr></table></figure>
+<h2 id="配置-DB2-客户端通信"><a href="#配置-DB2-客户端通信" class="headerlink" title="配置 DB2 客户端通信"></a>配置 DB2 客户端通信</h2><p><strong>节点目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 列出节点</span><br><span class="line">db2 list node directory</span><br><span class="line">-- 编目节点</span><br><span class="line">db2 catalog tcpip node &lt;node_name&gt; remote &lt;host_name | ip&gt; server &lt;port_name | port&gt;  </span><br><span class="line">-- 删除节点  </span><br><span class="line">db2 uncatalog node &lt;node_name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>数据库目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 列出数据库</span><br><span class="line">db2 list db directory  </span><br><span class="line">-- 编码数据库</span><br><span class="line">db2 catalog db &lt;db_name&gt; as &lt;db_alias&gt; at node &lt;node_name&gt;  </span><br><span class="line">-- 删除数据库</span><br><span class="line">db2 uncatalog db &lt;db_alias&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -452,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/db2/" rel="tag"># db2</a>
+            <a href="/tags/db2/" rel="tag"># DB2</a>
           
         </div>
       
@@ -636,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装DB2"><span class="nav-number">2.</span> <span class="nav-text">安装DB2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装实例"><span class="nav-number">3.</span> <span class="nav-text">安装实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装数据库"><span class="nav-number">4.</span> <span class="nav-text">安装数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置DB2运行环境"><span class="nav-number">5.</span> <span class="nav-text">配置DB2运行环境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装DB2"><span class="nav-number">2.</span> <span class="nav-text">安装DB2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装实例"><span class="nav-number">3.</span> <span class="nav-text">安装实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装数据库"><span class="nav-number">4.</span> <span class="nav-text">安装数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2运行环境"><span class="nav-number">5.</span> <span class="nav-text">配置 DB2运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2服务器的-TCP-IP通信"><span class="nav-number">6.</span> <span class="nav-text">配置 DB2服务器的 TCP/IP通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2-客户端通信"><span class="nav-number">7.</span> <span class="nav-text">配置 DB2 客户端通信</span></a></li></ol></div>
             
 
           </div>
