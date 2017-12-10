@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="db2" />
+  <meta name="keywords" content="db2, table" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="安装DB2数据库">
-<meta name="keywords" content="db2">
+<meta name="description" content="DB2数据库对象 —— 表">
+<meta name="keywords" content="db2, table">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DB2数据库安装">
-<meta property="og:url" content="http://yoursite.com/database/db2/db2数据库安装/index.html">
+<meta property="og:title" content="DB2数据库对象 — 表">
+<meta property="og:url" content="http://yoursite.com/database/db2/db2数据库对象—表/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="安装DB2数据库">
+<meta property="og:description" content="DB2数据库对象 —— 表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-09T10:23:31.206Z">
+<meta property="og:updated_time" content="2017-12-10T07:51:15.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DB2数据库安装">
-<meta name="twitter:description" content="安装DB2数据库">
+<meta name="twitter:title" content="DB2数据库对象 — 表">
+<meta name="twitter:description" content="DB2数据库对象 —— 表">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/database/db2/db2数据库安装/"/>
+  <link rel="canonical" href="http://yoursite.com/database/db2/db2数据库对象—表/"/>
 
 
 
 
 
-  <title>DB2数据库安装 | Gavin's Blog</title>
+  <title>DB2数据库对象 — 表 | Gavin's Blog</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/database/db2/db2数据库安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/database/db2/db2数据库对象—表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DB2数据库安装</h1>
+          <h1 class="post-title" itemprop="name headline">DB2数据库对象 — 表</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T22:30:05+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T13:19:58+08:00">
+                2017-12-10
               </time>
             
 
@@ -388,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/database/db2/db2数据库安装/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/database/db2/db2数据库安装/" itemprop="commentsCount"></span>
+                <a href="/database/db2/db2数据库对象—表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/database/db2/db2数据库对象—表/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -422,34 +422,47 @@
       
 
       
-        <p>安装DB2数据库</p>
+        <p>DB2数据库对象 —— 表</p>
 <a id="more"></a>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>CentOS 7<br>DB2 Express-C v10.1 (db2_v101_linuxx64_expc.tar.gz)</p>
-<h2 id="安装DB2"><a href="#安装DB2" class="headerlink" title="安装DB2"></a>安装DB2</h2><p><strong>1. 解压安装包</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf db2_v101_linuxx64_expc.tar.gz -C /opt</span><br></pre></td></tr></table></figure>
-<p><strong>2. 执行安装</strong><br>db2_install 默认安装目录为 /opt/ibm/db2， 可以通过 -b指定安装目录， -h 帮助</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su -              # root用户</span><br><span class="line">cd /opt/expc      # 进入安装目录</span><br><span class="line">./db2_install     # 以root用户安装DB2</span><br></pre></td></tr></table></figure>
-<h2 id="安装实例"><a href="#安装实例" class="headerlink" title="安装实例"></a>安装实例</h2><p><strong>1. 创建实例相关用户</strong><br>在Linux/Unix上创建实例时必须有与实例同名用户存在；<br>实例用户的home目录，是创建实例的位置；<br>受防护用户(db2fenc1)与应用开发相关，但是作为创建实例却是必须的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">groupadd -g 2000 db2iadm1                 # 实例用户组</span><br><span class="line">groupadd -g 2001 db2fadm1                 # 受防护组</span><br><span class="line">useradd -m -u 2000 -g db2iadm1 db2inst1   # 实例用户</span><br><span class="line">useradd -m -u 2001 -g db2fadm1 db2fenc1   # 受防护用户</span><br></pre></td></tr></table></figure>
-<p><strong>2. 实例安装</strong><br>可以直接键入 ./db2icrt 获取命令帮助信息；<br>Linux/Unix下 <strong>/home/实例用户/sqllib/</strong> 目录为实例目录，实例目录一旦创建不能更改其位置。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> root用户执行以下命令</span><br><span class="line">cd /opt/ibm/db2/V10.1/instance            # 实例安装目录</span><br><span class="line">./db2icrt -p 50000 -u db2fenc1 db2inst1   # 实例安装-p &lt;端口号&gt; -u &lt;受防护用户&gt; &lt;实例用户&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><p>使用db2实例用户创建数据库<br><strong>1. 创建数据库目录</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su -                                    # root用户</span><br><span class="line">mkdir /data/db2/data                    # 创建数据库目录</span><br><span class="line">mkdir /data/db2/log                     # 创建数据库事物日志目录</span><br><span class="line">chown -R db2inst1:db2inst1 /data/db2/   # 赋权给 db2实例用户</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. 创建数据库</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">su - db2inst1                           # db2inst1用户   </span><br><span class="line">db2start                                # 启动实例</span><br><span class="line">                                        # 创建数据库</span><br><span class="line">db2 "create database test </span><br><span class="line">        automatic storage yes on /data/db2/data</span><br><span class="line">        dbpath on /data/db2/log </span><br><span class="line">        using codeset utf-8 </span><br><span class="line">        territory CN </span><br><span class="line">        pagesize 8 k"</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置-DB2运行环境"><a href="#配置-DB2运行环境" class="headerlink" title="配置 DB2运行环境"></a>配置 DB2运行环境</h2><p>可以通过引用 InstanceHome/sqllib/db2profile 文件来配置其他用户 DB2 运行环境<br>在用户目录下 .bash_profile 文件中加入如下配置<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ -f /home/db2inst1/sqllib/db2profile ]; then</span><br><span class="line">  . /home/db2inst1/sqllib/db2profile</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置-DB2服务器的-TCP-IP通信"><a href="#配置-DB2服务器的-TCP-IP通信" class="headerlink" title="配置 DB2服务器的 TCP/IP通信"></a>配置 DB2服务器的 TCP/IP通信</h2><p><strong>1. 标识 “服务名称”和 “连接端口” 或 仅标识 ”连接端口”</strong>  </p>
-<ul>
-<li>方式一： 标识 ”连接服务名称” 和 “连接端口”</li>
-</ul>
-<p>在 数据库管理器配置文件 中的 SVCENAME（服务名）指定 “服务名称”<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db2 get dbm cfg | grep SVCENAME #获取当前数据库管理器配置文件中服务名</span><br><span class="line">db2 update dbm cfg using SVCENAME db2inst1 #设置数据库管理器配置文件中服务名为： db2inst1</span><br></pre></td></tr></table></figure></p>
-<p>在 /etc/services 配置文件中添加与修改后服务名称一致的对应端口号<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2inst1    50000/tcp</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>方式二： 仅标识 “连接端口”</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2 update dbm cfg using SVCENAME 50000</span><br></pre></td></tr></table></figure>
-<p><strong>2. 设置服务器的通信协议</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db2set DB2COMM=tcpip</span><br></pre></td></tr></table></figure>
-<h2 id="配置-DB2-客户端通信"><a href="#配置-DB2-客户端通信" class="headerlink" title="配置 DB2 客户端通信"></a>配置 DB2 客户端通信</h2><p><strong>节点目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 列出节点</span><br><span class="line">db2 list node directory</span><br><span class="line">-- 编目节点</span><br><span class="line">db2 catalog tcpip node &lt;node_name&gt; remote &lt;host_name | ip&gt; server &lt;port_name | port&gt;  </span><br><span class="line">-- 删除节点  </span><br><span class="line">db2 uncatalog node &lt;node_name&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>数据库目录</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 列出数据库</span><br><span class="line">db2 list db directory  </span><br><span class="line">-- 编码数据库</span><br><span class="line">db2 catalog db &lt;db_name&gt; as &lt;db_alias&gt; at node &lt;node_name&gt;  </span><br><span class="line">-- 删除数据库</span><br><span class="line">db2 uncatalog db &lt;db_alias&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="表设计"><a href="#表设计" class="headerlink" title="表设计"></a>表设计</h3><h4 id="生成列"><a href="#生成列" class="headerlink" title="生成列"></a>生成列</h4><p>生成列在表中定义，在这些列中，存储的值是使用表达式计算得出的，而不是通过插入或更新操作指定<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.test1(</span><br><span class="line">   field1 <span class="built_in">INT</span>,</span><br><span class="line">   field2 <span class="built_in">INT</span>,</span><br><span class="line">   create_field1 <span class="built_in">INT</span> <span class="keyword">GENERATED</span> <span class="keyword">ALWAYS</span> <span class="keyword">AS</span> (field1 + field2),</span><br><span class="line">   create_field2 <span class="built_in">INT</span> <span class="keyword">GENERATED</span> <span class="keyword">ALWAYS</span> <span class="keyword">AS</span> (<span class="keyword">CASE</span> <span class="keyword">WHEN</span> field1 &gt; field2 <span class="keyword">THEN</span> <span class="number">0</span> <span class="keyword">ELSE</span> <span class="number">1</span> <span class="keyword">END</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><a href="https://www.ibm.com/support/knowledgecenter/zh/SSEPGG_9.7.0/com.ibm.db2.luw.admin.dbobj.doc/doc/c0020109.html" target="_blank" rel="noopener">生成列</a></p>
+</blockquote>
+<h4 id="标识列"><a href="#标识列" class="headerlink" title="标识列"></a>标识列</h4><p>标识列为 DB2提供一种方法，可自动为添加至表的每一行生成唯一数值<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.test2(</span><br><span class="line">   field1 <span class="built_in">INT</span> <span class="keyword">GENERATED</span> <span class="keyword">ALWAYS</span> <span class="keyword">AS</span> <span class="keyword">IDENTITY</span>(<span class="keyword">START</span> <span class="keyword">WITH</span> <span class="number">1</span>, <span class="keyword">INCREMENT</span> <span class="keyword">BY</span> <span class="number">1</span>),</span><br><span class="line">   field2 <span class="built_in">VARCHAR</span>(<span class="number">10</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>使用 GENERATED ALWAYS 定义的列始终由 DB2数据库管理器生成值，不允许用户或程序显式提供（不允许Insert值）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.test3(</span><br><span class="line">   field1 <span class="built_in">INT</span> <span class="keyword">GENERATED</span> <span class="keyword">BY</span> <span class="keyword">DEFAULT</span> <span class="keyword">AS</span> <span class="keyword">IDENTITY</span>,</span><br><span class="line">   field2 <span class="built_in">VARCHAR</span>(<span class="number">10</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>使用 GENERATED BY DEFAULT 定义的列可以由 DB2数据库生成值，但也允许用户或程序显式的提供该值（可以Insert值）</p>
+<blockquote>
+<p><a href="https://www.ibm.com/support/knowledgecenter/zh/SSEPGG_9.7.0/com.ibm.db2.luw.admin.dbobj.doc/doc/c0020108.html" target="_blank" rel="noopener">自动编号和标识列</a></p>
+</blockquote>
+<h4 id="not-null-with-default"><a href="#not-null-with-default" class="headerlink" title="not null with default"></a>not null with default</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.test(</span><br><span class="line">    field1 <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">WITH</span> <span class="keyword">DEFAULT</span> <span class="string">'1'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="not-logged-initially"><a href="#not-logged-initially" class="headerlink" title="not logged initially"></a>not logged initially</h4><p><strong>1. 创建不记日志表</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.test4(</span><br><span class="line">   field1 <span class="built_in">INT</span>,</span><br><span class="line">   field2 <span class="built_in">VARCHAR</span>(<span class="number">10</span>)</span><br><span class="line">)<span class="keyword">NOT</span> LOGGED <span class="keyword">INITIALLY</span>;</span><br></pre></td></tr></table></figure></p>
+<p>NOT LOGGED INITIALLY 激活后，如果此表相关语句失败（导致rollback），或者 ROLLBACK TO SAVEPOINT 被执行，那么整个事物将被回滚，并且被激活 NOT LOGGED INITIALLY 属性的表将被标记为不可访问，此表只能被删除并重建。</p>
+<p><strong>2. 在事物中激活不记日志特性，仅当前事务不记日志</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 <span class="keyword">ACTIVATE</span> <span class="keyword">NOT</span> LOGGED <span class="keyword">INITIALLY</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>3. 不记日志清空表</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 <span class="keyword">ACTIVATE</span> <span class="keyword">NOT</span> LOGGED <span class="keyword">INITIALLY</span> <span class="keyword">WITH</span> <span class="keyword">EMPTY</span> <span class="keyword">TABLE</span>;</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> test.test3 <span class="keyword">IMMEDIATE</span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="append-on"><a href="#append-on" class="headerlink" title="append on"></a>append on</h4><p>在DB2中，当表的数据被删除时，空间并不会释放，而是在原来位置做个删除标志，表示该空间可以重用。<br>当执行 Insert语句时，会扫描空闲空间并将新行置入。<br>而启用 append on特性后，那么 执行插入时不会扫描空间空间，而是直接插入到表的最后。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 APPEND &lt; <span class="keyword">ON</span> | <span class="keyword">OFF</span> &gt;;</span><br></pre></td></tr></table></figure></p>
+<p>打开 APPEND ON 属性时，表不能有集群索引；<br>启用该属性，考虑定期 REORG 表。</p>
+<h4 id="pctfree"><a href="#pctfree" class="headerlink" title="pctfree"></a>pctfree</h4><p>为每页预留可用空间，应付 row overflow<br>如果没有进行指定，默认预留 10%的空闲空<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 PCTFREE <span class="number">10</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 PCTFREE <span class="number">0</span>; <span class="comment">--只读表</span></span><br></pre></td></tr></table></figure></p>
+<p>OVERFLOW  </p>
+<blockquote>
+<p>假如字段 name的数据类型为 VARCHAR(60),如果一开始 name长度为10个字节，这时值假设刚刚可以放到一个数据页中。<br>但是假如有一个 update操作将 name从10字节更新为60字节，<br>如果这个数据页无法放下，那么数据库就在当前位置存放一个指针，<br>把数据放到一个新的数据页中，这个就叫 overflow。<br>overflow会增加 I/O的读取，对性能不好。</p>
+</blockquote>
+<h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>如果表数据量经常变化非常大，导致统计信息不准确而不能执行索引扫描，<br>那么启用 volatile特性后，优化器将考虑使用索引扫描而不是表扫描<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test.test3 VOLATILE CARDINALITY;</span><br></pre></td></tr></table></figure></p>
+<p>对于这样的表，DB2在以下情况将执行索引扫描代替表扫描，而不考虑统计信息： </p>
+<ol>
+<li>引用的所有列都是索引的组成部分</li>
+<li>索引可以在索引扫描期间应用谓词 </li>
+</ol>
+<p>可以在 SYSCAT.TABLES 中查询出 “PCTFREE”、”LOCKSIZE“、”VOLATILE“、”APPEND ON“ 等信息</p>
+<h3 id="表维护"><a href="#表维护" class="headerlink" title="表维护"></a>表维护</h3><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test.tab (</span><br><span class="line">    field1  <span class="built_in">INT</span>             <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">    ,field2 <span class="built_in">VARCHAR</span>(<span class="number">255</span>)</span><br><span class="line">    ,<span class="keyword">CONSTRAINT</span> pk_test_tab PRIMARY <span class="keyword">KEY</span> (field1)</span><br><span class="line">) <span class="keyword">IN</span> data_spac <span class="keyword">INDEX</span> <span class="keyword">IN</span> index_spac;</span><br><span class="line"></span><br><span class="line"><span class="keyword">COMMENT</span> <span class="keyword">ON</span> <span class="keyword">TABLE</span> test.tab <span class="keyword">IS</span> <span class="string">'示例表'</span>;</span><br><span class="line"><span class="keyword">COMMENT</span> <span class="keyword">ON</span> <span class="keyword">COLUMN</span> test.tab.field1 <span class="keyword">IS</span> <span class="string">'字段1'</span>;</span><br><span class="line"><span class="keyword">COMMENT</span> <span class="keyword">ON</span> <span class="keyword">COLUMN</span> test.tab.field2 <span class="keyword">IS</span> <span class="string">'字段2'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">LIKE</span> &lt;tgtTable&gt;</span><br></pre></td></tr></table></figure>
+<p>上述命令产生的新表不会自动创建表中部分的附属对象（唯一约束、外键约束、触发器、索引）</p>
+<h4 id="查询表"><a href="#查询表" class="headerlink" title="查询表"></a>查询表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 获取表</span></span><br><span class="line">list tables [for all | for schema &lt;schema&gt;]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 获取表结构</span></span><br><span class="line"><span class="keyword">describe</span> <span class="keyword">table</span> &lt;<span class="keyword">table</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 获取DDL信息</span></span><br><span class="line">db2look -d &lt;<span class="keyword">database</span>&gt; -t &lt;<span class="keyword">table</span>&gt; -e</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 相关系统表</span></span><br><span class="line">SYSCAT.TABLES</span><br><span class="line">SYSCAT.COLUMNS</span><br></pre></td></tr></table></figure>
+<h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 删除字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> &lt;<span class="keyword">column</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 新增字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &lt;<span class="keyword">column</span>&gt; &lt;<span class="keyword">type</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改字段类型</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> &lt;<span class="keyword">column</span>&gt; <span class="keyword">SET</span> <span class="keyword">DATA</span> <span class="keyword">TYPE</span> &lt;<span class="keyword">type</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置非空约束</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> &lt;<span class="keyword">column</span>&gt; <span class="keyword">SET</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> &lt;<span class="keyword">column</span>&gt; <span class="keyword">DROP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改字段名</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">RENAME</span> <span class="keyword">COLUMN</span> &lt;oldColumn&gt; <span class="keyword">TO</span> &lt;newColumn&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 修改表名</span></span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">CURRENT</span> <span class="keyword">SCHEMA</span> &lt;<span class="keyword">schema</span>&gt;;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt; <span class="keyword">RENAME</span> <span class="keyword">TO</span> &lt;newTable&gt;;</span><br></pre></td></tr></table></figure>
+<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> &lt;<span class="keyword">table</span>&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<p>循序渐进DB2 （第5章）<br><a href="https://www.ibm.com/support/knowledgecenter/zh/SSEPGG_11.1.0/com.ibm.db2.luw.admin.dbobj.doc/doc/c0004098.html" target="_blank" rel="noopener">IBM Knowledge Center</a></p>
+</blockquote>
 
       
     </div>
@@ -469,6 +482,8 @@
           
             <a href="/tags/db2/" rel="tag"># DB2</a>
           
+            <a href="/tags/table/" rel="tag"># Table</a>
+          
         </div>
       
 
@@ -480,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/sql/sql脚本开发规范/" rel="next" title="SQL脚本开发规范">
-                <i class="fa fa-chevron-left"></i> SQL脚本开发规范
+              <a href="/linux/linux磁盘操作/" rel="next" title="Linux磁盘操作">
+                <i class="fa fa-chevron-left"></i> Linux磁盘操作
               </a>
             
           </div>
@@ -490,8 +505,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/database/db2/db2体系结构/" rel="prev" title="DB2体系结构">
-                DB2体系结构 <i class="fa fa-chevron-right"></i>
+              <a href="/database/db2/db2数据库对象—索引/" rel="prev" title="DB2数据库对象 — 索引">
+                DB2数据库对象 — 索引 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -651,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装DB2"><span class="nav-number">2.</span> <span class="nav-text">安装DB2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装实例"><span class="nav-number">3.</span> <span class="nav-text">安装实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装数据库"><span class="nav-number">4.</span> <span class="nav-text">安装数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2运行环境"><span class="nav-number">5.</span> <span class="nav-text">配置 DB2运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2服务器的-TCP-IP通信"><span class="nav-number">6.</span> <span class="nav-text">配置 DB2服务器的 TCP/IP通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-DB2-客户端通信"><span class="nav-number">7.</span> <span class="nav-text">配置 DB2 客户端通信</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表设计"><span class="nav-number">1.</span> <span class="nav-text">表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成列"><span class="nav-number">1.1.</span> <span class="nav-text">生成列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识列"><span class="nav-number">1.2.</span> <span class="nav-text">标识列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#not-null-with-default"><span class="nav-number">1.3.</span> <span class="nav-text">not null with default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#not-logged-initially"><span class="nav-number">1.4.</span> <span class="nav-text">not logged initially</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#append-on"><span class="nav-number">1.5.</span> <span class="nav-text">append on</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pctfree"><span class="nav-number">1.6.</span> <span class="nav-text">pctfree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#volatile"><span class="nav-number">1.7.</span> <span class="nav-text">volatile</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表维护"><span class="nav-number">2.</span> <span class="nav-text">表维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-number">2.1.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询表"><span class="nav-number">2.2.</span> <span class="nav-text">查询表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表"><span class="nav-number">2.3.</span> <span class="nav-text">修改表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除表"><span class="nav-number">2.4.</span> <span class="nav-text">删除表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
