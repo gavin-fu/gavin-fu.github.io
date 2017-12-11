@@ -73,8 +73,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[SQL脚本开发规范]]></title>
-    <url>%2Fsql%2Fsql%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%2F</url>
+    <title><![CDATA[SQL脚本编码规范]]></title>
+    <url>%2Fsql%2Fsql%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%2F</url>
     <content type="text"><![CDATA[良好的编码习惯可以减少出问题的几率和后期代码维护的成本 基本要求 脚本文件名称使用小写，单词与单词间使用下划线分割，最好对应于操作的表名 脚本采用 UTF-8编码， UNIX格式 脚本必须写好基本注释信息（如： 脚本功能，加载时机频率，开发人员…） 编写规范注释编写SQL脚本中无论单行、多行注释均用 –标识，不使用块状注释 / / 12345678-- 脚本名称： demo.sql-- 脚本功能： sql脚本示例-- 加载频率： d-- 创建人： gavin-- 创建时间： 2017-12-04-- 修改人：-- 修改时间：-- 修改说明： 字段排列 每个查询字段独占一行 分割字段的逗号置于字段名称之前 查询字段写好注释 12345select field1 -- 字段1 ,field2 -- 字段2 ,field3 -- 字段3from test.demo -- 示例表; 子句排列同一级别的子句要对齐 123456789select a.field1 -- 字段1 ,a.field2 -- 字段2 ,b.field3 -- 字段3from test.tab1 a -- 表1inner join test.tab2 b -- 表2on a.field1 = b.field1where a.field2 = ''order by a.field1; 子句查询嵌套子句嵌套编排做好层次分明 12345678910select a.field1 -- 字段1 ,a.field2 -- 字段2 ,a.field3 -- 字段3from test.tab1 a -- 表1where a.field2 = ''and exists ( select 1 from test.tab2 b -- 表2 where a.field1 = b.field1 ); 字段别名 如查询字段的名称与目标表字段名称不一致，则使用 AS为字段命别名 若查询字段或表达式过长，则 AS最好分行对齐 123456789101112insert into test.tgt ( -- 目标表 field1 -- 字段1 ,field2 -- 字段2 ,field3 -- 字段3)select field1 ,'xxx' AS field2 ,express1 || express2 || express 3 AS field3from test.src -- 目标表;commit; 表别名多表嵌套查询需体现层次结构，可为表命别名。使用字母 a-z标明层次, 同一层次间使用数字标明序号 1234567891011select a1.field1 -- 字段1 a2.field2 -- 字段2from test.tab1 a1innser join ( select b1.field2 as field1 ,b2.field2 from test.tab2 b1 inner join test.tab3 b2 on b1.field1 = b2.field1 ) a2on a1.field1 = a2.field1; 特殊表命名规范 历史表： 以h结尾 临时表： 以tmp结尾 备份表： 以8位备份日期结尾]]></content>
       <categories>
         <category>SQL</category>
