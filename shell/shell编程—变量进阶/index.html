@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DB2," />
+  <meta name="keywords" content="shell, variable" />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="DB2数据库体系结构">
-<meta name="keywords" content="DB2">
+<meta name="description" content="shell编程之变量进阶">
+<meta name="keywords" content="shell, variable">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DB2体系结构">
-<meta property="og:url" content="http://yoursite.com/database/db2/db2体系结构/index.html">
+<meta property="og:title" content="Shell编程 — 变量进阶">
+<meta property="og:url" content="http://yoursite.com/shell/shell编程—变量进阶/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="DB2数据库体系结构">
+<meta property="og:description" content="shell编程之变量进阶">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/database/db2/db2体系结构/db2体系结构图.png">
-<meta property="og:updated_time" content="2017-12-09T16:35:20.658Z">
+<meta property="og:updated_time" content="2017-12-14T11:48:19.713Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DB2体系结构">
-<meta name="twitter:description" content="DB2数据库体系结构">
-<meta name="twitter:image" content="http://yoursite.com/database/db2/db2体系结构/db2体系结构图.png">
+<meta name="twitter:title" content="Shell编程 — 变量进阶">
+<meta name="twitter:description" content="shell编程之变量进阶">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/database/db2/db2体系结构/"/>
+  <link rel="canonical" href="http://yoursite.com/shell/shell编程—变量进阶/"/>
 
 
 
 
 
-  <title>DB2体系结构 | Gavin's Blog</title>
+  <title>Shell编程 — 变量进阶 | Gavin's Blog</title>
   
 
 
@@ -309,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/database/db2/db2体系结构/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/shell/shell编程—变量进阶/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -326,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DB2体系结构</h1>
+          <h1 class="post-title" itemprop="name headline">Shell编程 — 变量进阶</h1>
         
 
         <div class="post-meta">
@@ -338,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T20:59:59+08:00">
-                2017-12-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T19:14:07+08:00">
+                2017-12-13
               </time>
             
 
@@ -361,19 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/database/db2/" itemprop="url" rel="index">
-                    <span itemprop="name">DB2</span>
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">Shell</span>
                   </a>
                 </span>
 
@@ -390,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/database/db2/db2体系结构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/database/db2/db2体系结构/" itemprop="commentsCount"></span>
+                <a href="/shell/shell编程—变量进阶/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/shell/shell编程—变量进阶/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -424,41 +411,101 @@
       
 
       
-        <p>DB2数据库体系结构</p>
+        <p>shell编程之变量进阶</p>
 <a id="more"></a>
-<h3 id="DB2体系结构图"><a href="#DB2体系结构图" class="headerlink" title="DB2体系结构图"></a>DB2体系结构图</h3><p><img src="db2体系结构图.png" alt="DB2体系结构图"></p>
-<h3 id="DB2服务器环境变量"><a href="#DB2服务器环境变量" class="headerlink" title="DB2服务器环境变量"></a>DB2服务器环境变量</h3><p><strong>1. 环境变量</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set &lt;variable&gt;=&lt;value&gt;      # 设置服务器变量</span><br></pre></td></tr></table></figure></p>
-<p><strong>2.全局注册变量</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db2set -all                     # 查看当前注册变量设置 ([g]全局、[i]实例)</span><br><span class="line">db2set -lr                      # 查询所有注册变量 (全局 + 实例)</span><br><span class="line">db2set &lt;variable&gt;=&lt;value&gt; -g    # 设置全局注册变量</span><br></pre></td></tr></table></figure></p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h4><p>参考： <a href="http://gavin.ren/database/db2/db2%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85/#more" target="_blank" rel="noopener">DB2数据库安装</a></p>
-<h4 id="实例相关命令"><a href="#实例相关命令" class="headerlink" title="实例相关命令"></a>实例相关命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db2ilist                              # 列出实例</span><br><span class="line">db2start                              # 启动实例</span><br><span class="line">db2stop [force]                       # 停止实例</span><br><span class="line">db2 force application all             # 强制中断实例下所有连接（当无法停止实例时，可以先执行该操作）</span><br><span class="line">db2iauto -[on | off] &lt;instance_name&gt;  # 自动起停实例</span><br><span class="line">db2 attach to &lt;instance_name&gt;         # 连接实例</span><br><span class="line">db2 detach / db2 terminate            # 断开实例</span><br><span class="line">db2idorp &lt;instance_name&gt;              # 删除实例 (需要root权限)</span><br></pre></td></tr></table></figure>
-<h4 id="配置实例"><a href="#配置实例" class="headerlink" title="配置实例"></a>配置实例</h4><p><strong>1. 实例级注册变量</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db2set &lt;variable&gt;=&lt;value&gt; [-i instance_name]    # 设置实例级注册变量</span><br><span class="line"># eg</span><br><span class="line">db2set DB2COMM=TCPIP</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. 数据库管理配置文</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db2 get dbm cfg                                     # 获取当前实例数据库管理文件配置</span><br><span class="line">db2 reset dbm cfg                                   # 恢复默认配置</span><br><span class="line">db2 update dbm cfg using &lt;parameter_name&gt; &lt;value&gt;   # 配置当前实例数据库管理文件参数</span><br><span class="line"># eg  </span><br><span class="line">db2 update dbm cfg using SVCENAME=50000</span><br></pre></td></tr></table></figure></p>
-<p><strong>DB2INSTANCE 变量</strong></p>
-<p>该变量主要用于实例间切换，但在Linux/Unix系统下实例名即为实例用户名，因此直接使用不同实例用户登陆进行实例切换<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $DB2INSTANCE               # 输出变量值</span><br><span class="line">set DB2INSTANCE=&lt;instance_name&gt; # 设置变量值</span><br><span class="line">get instance                    # 获取当前实例</span><br></pre></td></tr></table></figure></p>
-<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><p>创建数据库时默认生成三个表空间 SYSCATSPACE、TEMPSPACE1、USERSPACE1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE &lt;db_name&gt;                           -- 创建数据库</span><br><span class="line">    AUTOMATIC STORAGE &lt;YES | NO&gt;                    -- 是否自动存储</span><br><span class="line">    ON &lt;path | drive&gt;                               -- 数据库路径</span><br><span class="line">    ALIAS &lt;db_alias&gt;                                -- 别名</span><br><span class="line">    USING CODESET &lt;code&gt; TERRITORY &lt;territory&gt;      -- 代码页</span><br><span class="line">    COLLATE USING &lt;SYSTEM | IDENTITY | ...&gt;         -- 整理次序</span><br><span class="line">    CATALOG TABLESPACE &lt;tablespace_option&gt;          -- 系统编目表空间</span><br><span class="line">    USER TABLESPACE &lt;tablespace_option&gt;             -- 用户表空间</span><br><span class="line">    TEMPORARY TABLESPACE &lt;tablespace_option&gt;        -- 临时表空间</span><br><span class="line"></span><br><span class="line">    -- 大写为关键字</span><br></pre></td></tr></table></figure></p>
-<p><strong>示例：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create database test </span><br><span class="line">    automatic storage yes on /data/db2/data -- 使用自动存储管理</span><br><span class="line">    dbpath on /data/db2/log                 -- 指定数据库的事物日志存储路径</span><br><span class="line">    using codeset utf-8                     -- 指定字符集</span><br><span class="line">    territory CN                            -- 决定数据库的时间和日期格式为中文</span><br><span class="line">    pagesize 16 k                           -- 数据库默认页大小</span><br><span class="line">    alias test;                             -- 别名</span><br></pre></td></tr></table></figure></p>
-<h4 id="数据库相关操作"><a href="#数据库相关操作" class="headerlink" title="数据库相关操作"></a>数据库相关操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db2 list database directory         # 列出当前实例下所有数据库</span><br><span class="line">db2 drop database &lt;database_name&gt;   # 删除数据库</span><br></pre></td></tr></table></figure>
-<h4 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db2 get db cfg                                      # 获取当前据库配置文件参数设置</span><br><span class="line">db2 update db cfg using &lt;parameter_name&gt; &lt;value&gt;    # 配置当前数据库参数文件</span><br><span class="line">#eg:</span><br><span class="line">db2 update db cfg using LOGPRIMARY 50</span><br></pre></td></tr></table></figure>
-<h3 id="缓冲池"><a href="#缓冲池" class="headerlink" title="缓冲池"></a>缓冲池</h3><ol>
-<li>每个表空间都会与特定的缓冲池相关；  </li>
-<li>想要表空间与缓冲池相关，该缓冲池与表空间必须具有相同的页大小；  </li>
-<li>表空间与缓冲池关联是在使用 CREATE TABLESPACE 语句创建表空间时定义的，但是可以使用 ALTER TABLESPACE 语句更改关联。  </li>
-</ol>
-<h4 id="创建缓冲池"><a href="#创建缓冲池" class="headerlink" title="创建缓冲池"></a>创建缓冲池</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE BUFFERPOOL &lt;bufferpool_name&gt;     -- 缓冲池名称</span><br><span class="line">    SIZE &lt;AUTOMATIC | size_number&gt;      -- 缓冲池大小，即页数</span><br><span class="line">    PAGESIZE &lt;pagesize&gt;                 -- 缓冲池页大小</span><br><span class="line">    BLOCKSIZE &lt;number&gt;                  -- 可选参数： 指定每个块的大小，即在一次块I/O中从磁盘读取的页的数量。应该等于正在使用缓冲池的表空间的 EXTENTSIZE 的整数倍。</span><br><span class="line">    NUMBLOCKPAGES &lt;number&gt;              -- 可选参数： 定义块内存大小。应该是 BLOCKSIZE 的倍数，并且不能大于缓冲池页面数量的 98%。</span><br></pre></td></tr></table></figure>
-<p><strong>示例：</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> BUFFERPOLL MYBUFFER16K <span class="keyword">SIZE</span> <span class="keyword">AUTOMATIC</span> PAGESIZE <span class="number">16</span>K;</span><br></pre></td></tr></table></figure></p>
-<h4 id="缓冲池相关操作"><a href="#缓冲池相关操作" class="headerlink" title="缓冲池相关操作"></a>缓冲池相关操作</h4><p><strong>1. 修改缓冲池</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER BUFFERPOOL &lt;name&gt; SIZE &lt;tgt_size&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. 查看缓冲池</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>      T2.TBSPACE</span><br><span class="line">            ,T1.*</span><br><span class="line"><span class="keyword">FROM</span>        SYSCAT.BUFFERPOOLS T1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span>  SYSCAT.TABLESPACES T2</span><br><span class="line"><span class="keyword">ON</span>          T1.BUFFERPOOLID = T2.BUFFERPOOLID</span><br></pre></td></tr></table></figure></p>
-<h3 id="表空间"><a href="#表空间" class="headerlink" title="表空间"></a>表空间</h3><h4 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h4><p><strong>1. 创建用户表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- SMS</span><br><span class="line">CREATE TABLESPACE &lt;name&gt; MANAGED BY SYSTEM USING (&apos;&lt;path&gt;&apos;);  </span><br><span class="line"></span><br><span class="line">-- DMS</span><br><span class="line">CREATE TABLESPACE &lt;name&gt; MANAGED BY DATABASE USING (DEVICE | FILE &apos;&lt;path&gt;&apos;);  </span><br><span class="line"></span><br><span class="line">- DMS自动存储</span><br><span class="line">CREATE TABLESPACE &lt;name&gt;;  </span><br><span class="line">CREATE TABLESPACE &lt; name &gt; MANAGED BY AUTOMATIC STORAGE;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. 创建系统临时表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE SYSTEM TEMPORARY TABLESPACE tmp_tbsp MANAGED BY SYSTEM USING (&apos;/data/tmp_tbsp&apos;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>3. 创建用户临时表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER TEMPORARY TABLESPACE usr_tbsp MANAGED BY DATABASE USING (FILE &apos;/data/usr_tbsp&apos; 5000);</span><br></pre></td></tr></table></figure></p>
-<p><strong>示例:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TEMPORARY TABLESPACE tbs_temp</span><br><span class="line">    PAGESIZE 16K </span><br><span class="line">    MANAGED BY DATABASE USING（FILE &apos;/data/&apos; 1000）</span><br><span class="line">    EXTENTSIZE 32 </span><br><span class="line">    OVERHEAD 10.67 </span><br><span class="line">    PREFECHSIZE 32</span><br><span class="line">    TRANSFERRATE 0.04 </span><br><span class="line">    BUFFERPOOL MYBUFFER16K；</span><br></pre></td></tr></table></figure></p>
-<h4 id="表空间相关操作"><a href="#表空间相关操作" class="headerlink" title="表空间相关操作"></a>表空间相关操作</h4><p><strong>1. 查看表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db2 list tablespaces [show detail]                  # 查看表空间</span><br><span class="line">db2 list tablespace  containers for &lt;tablespace_id&gt; # 查看表空间及容器属性</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. 修改表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#   2.1. SMS表空间只能增加容器；</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; ADD(DEVICE &apos;&lt;path&gt;&apos; &lt;size&gt;, FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);</span><br><span class="line"></span><br><span class="line">#   2.2. DMS表空间可以调整容器；</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; REDUCE (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 缩小</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; EXTEND (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 增大</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; RESIZE (FILE &apos;&lt;filename&gt;&apos; &lt;size&gt;);      # 调增 （可调小或调大）</span><br><span class="line">ALTER TABLESPACE &lt;name&gt; DROP (FILE &apos;filename&apos;, DEVICE &apos;path&apos;);  # 删除DMS容器</span><br><span class="line"></span><br><span class="line">#   2.3. 自动存储表空间不能手动调整大小；</span><br></pre></td></tr></table></figure></p>
-<p><strong>3. 重命名表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RENAME TABLESPACE &lt;srcName&gt; TO &lt;tgtName&gt;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4. 将表空间从托机状态切换至联机状态</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLESPACE &lt;name&gt; SWITCH ONLINE;</span><br></pre></td></tr></table></figure></p>
-<p><strong>5. 删除表空间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLESPACE &lt;name&gt;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="间接参数扩展"><a href="#间接参数扩展" class="headerlink" title="间接参数扩展"></a>间接参数扩展</h3><p><code>${!parameter}</code><br>上述语句中，被引用的参数不是PARAMETER自身，而是PARAMETER的值</p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ temp='hello world'</span><br><span class="line">[gavin@localhost ~]$ parameter=temp</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;!parameter&#125;</span><br><span class="line">hello world                                 # 被引用的变量是 temp</span><br></pre></td></tr></table></figure></p>
+<p>上述效果等同于如下命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ eval echo \$&#123;$parameter&#125;</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量名扩展"><a href="#变量名扩展" class="headerlink" title="变量名扩展"></a>变量名扩展</h3><p><code>${!PREFIX*}</code><br><code>${!PREFIX@}</code><br>这种参数扩展将列出以字符串PREFIX开头的所有变量名</p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo $&#123;!BASH*&#125;</span><br><span class="line">BASH BASHOPTS BASHPID BASH_ALIASES BASH_ARGC BASH_ARGV BASH_CMDS BASH_COMMAND BASH_COMPLETION_COMPAT_DIR BASH_LINENO BASH_SOURCE BASH_SUBSHELL BASH_VERSINFO BASH_VERSION</span><br><span class="line"></span><br><span class="line">[gavin@localhost ~]$ echo $&#123;!BASH@&#125;</span><br><span class="line">BASH BASHOPTS BASHPID BASH_ALIASES BASH_ARGC BASH_ARGV BASH_CMDS BASH_COMMAND BASH_COMPLETION_COMPAT_DIR BASH_LINENO BASH_SOURCE BASH_SUBSHELL BASH_VERSINFO BASH_VERSION</span><br></pre></td></tr></table></figure></p>
+<h3 id="大小写修改（bash-4-0-新特性）"><a href="#大小写修改（bash-4-0-新特性）" class="headerlink" title="大小写修改（bash 4.0 新特性）"></a>大小写修改（bash 4.0 新特性）</h3><p><code>${PARAMETER^} </code> ：将变量的第一个字符改为大写<br><code>${PARAMETER^^}</code> ：将变量全部内容改为大写<br><code>${PARAMETER,} </code> ：将变量的第一个字符改为小写<br><code>${PARAMETER,,}</code> ：将变量全部内容改为小写<br><code>${PARAMETER~} </code> ：对变量中每个单词首字母大小写取反（单词之间根据空格划分）<br><code>${PARAMETER~~}</code> ：对变量内容大小写进行取反</p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var='hello world'</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var^&#125;   # 将变量的第一个字符改为大写</span><br><span class="line">Hello world</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var^^&#125;  # 将变量全部内容改为大写</span><br><span class="line">HELLO WORLD</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var,&#125;   # 将变量的第一个字符改为小写</span><br><span class="line">hello world</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var,,&#125;  # 将变量全部内容改为小写</span><br><span class="line">hello world</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var~&#125;   # 对变量中每个单词首字母大小写取反</span><br><span class="line">Hello World</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var~~&#125;  # 对变量内容大小写进行取反</span><br><span class="line">HELLO WORLD</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串移除"><a href="#字符串移除" class="headerlink" title="字符串移除"></a>字符串移除</h3><p><code>${PARAMETER#PATTERN} </code> ：从前至后，最短匹配移除<br><code>${PARAMETER##PATTERN}</code> ：从前至后，最长匹配移除<br><code>${PARAMETER%PATTERN} </code> ：从后往前，最短匹配移除<br><code>${PARAMETER%%PATTERN}</code> ：从后往前，最长匹配移除</p>
+<p><em>记忆方式： <code>#</code>键在前，所以从前至后； <code>%</code>键在后，所以从后至前</em></p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ file='/home/gavin/batch/script/file.txt'</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;file#*/&#125;    # 从前向后最短匹配(*/)</span><br><span class="line">home/gavin/batch/script/file.txt</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;file##*/&#125;   # 从前向后最长匹配(*/)</span><br><span class="line">file.txt</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;file%/*&#125;    # 从后向前最短匹配(/*)</span><br><span class="line">/home/gavin/batch/script</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;file%%/*&#125;   # 从后向前最长匹配(/*)</span><br><span class="line">                                        # 变量字符串全部移除</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h3><p><code>${PARAMETER:OFFSET}       </code> ：从指定位置截取至末尾<br><code>${PARAMETER:OFFSET:LENGTH}</code> ：从指定位置截取指定长度</p>
+<p><em>起始字符的索引从0开始计数。我们也可以从后向前计数,将最后一个字符索引记为 -1</em><br><em>如果使用负数作为索引值的话,必须将负数放入括号内，或者使用 0-n方式</em></p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var="This is a line of text"</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:5&#125;</span><br><span class="line">is a line of text</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:0:4&#125;</span><br><span class="line">This</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:(-4)&#125;</span><br><span class="line">text</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:0-4&#125;</span><br><span class="line">text</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串删除与替换"><a href="#字符串删除与替换" class="headerlink" title="字符串删除与替换"></a>字符串删除与替换</h3><p><code>${PARAMETER/PATTERN/STRING} </code>   ：替换第一个匹配的字符串<br><code>${PARAMETER//PATTERN/STRING}</code>   ：替换所有匹配的字符串<br><code>${PARAMETER/PATTERN} </code>          ：删除第一个匹配的字符串<br><code>${PARAMETER//PATTERN}</code>          ：删除所有匹配的字符串</p>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var=aabbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var/a/A&#125;</span><br><span class="line">Aabbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var//a/A&#125;</span><br><span class="line">AAbbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var/a&#125;</span><br><span class="line">abbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var//[a-z]&#125; # 删除变量中所有的 a-z 字符</span><br><span class="line">                                        # 变量字符串全部删除</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h3><p>获取变量字符穿长度</p>
+<p><strong>示例</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var='啊AA'</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;#var&#125;</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h3 id="变量的测试与内容替换"><a href="#变量的测试与内容替换" class="headerlink" title="变量的测试与内容替换"></a>变量的测试与内容替换</h3><table>
+<thead>
+<tr>
+<th>变量设置方式</th>
+<th>str未定义</th>
+<th>str为空字串</th>
+<th>str已设置非为空字串</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>var=${str-expr}</td>
+<td>var=expr</td>
+<td>var=</td>
+<td>var=$str</td>
+</tr>
+<tr>
+<td>var=${str:-expr}</td>
+<td>var=expr</td>
+<td>var=expr</td>
+<td>var=$str</td>
+</tr>
+<tr>
+<td>var=${str+expr}</td>
+<td>var=</td>
+<td>var=expr</td>
+<td>var=expr</td>
+</tr>
+<tr>
+<td>var=${str:+expr}</td>
+<td>var=</td>
+<td>var=</td>
+<td>var=expr</td>
+</tr>
+<tr>
+<td>var=${str=expr}</td>
+<td>str=expr</td>
+<td>str 不变</td>
+<td>str 不变</td>
+</tr>
+<tr>
+<td>var=${str=expr}</td>
+<td>var=expr</td>
+<td>var=</td>
+<td>var=$str</td>
+</tr>
+<tr>
+<td>var=${str:=expr}</td>
+<td>str=expr</td>
+<td>str=expr</td>
+<td>str 不变</td>
+</tr>
+<tr>
+<td>var=${str:=expr}</td>
+<td>var=expr</td>
+<td>var=expr</td>
+<td>var=$str</td>
+</tr>
+<tr>
+<td>var=${str?expr}</td>
+<td>expr 输出至</td>
+<td>stderr</td>
+<td>var= var=$str</td>
+</tr>
+<tr>
+<td>var=${str:?expr}</td>
+<td>expr 输出至</td>
+<td>stderr</td>
+<td>expr 输出至 stderr var=$str</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ unset null     # 变量 null 未定义</span><br><span class="line">[gavin@localhost ~]$ blank=         # 变量 blank 为空串</span><br><span class="line">[gavin@localhost ~]$ blank1=''      # 变量 blank1 为空串</span><br><span class="line">[gavin@localhost ~]$ var=string     # 变量 var 设置为非空字串</span><br><span class="line"></span><br><span class="line">[gavin@localhost ~]$ echo $&#123;null-word&#125;</span><br><span class="line">word</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;blank-word&#125;</span><br><span class="line">                                        # 空串</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var-word&#125;</span><br><span class="line">string</span><br><span class="line"></span><br><span class="line">[gavin@localhost ~]$ echo $&#123;null:-word&#125;</span><br><span class="line">word</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;blank:-word&#125;</span><br><span class="line">word</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:-word&#125;</span><br><span class="line">string</span><br><span class="line"></span><br><span class="line">[gavin@localhost ~]$ echo $&#123;null+word&#125;</span><br><span class="line">                                        # 空串</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;blank+word&#125;</span><br><span class="line">word</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var+word&#125;</span><br><span class="line">word</span><br><span class="line"></span><br><span class="line">[gavin@localhost ~]$ echo $&#123;null:+word&#125;</span><br><span class="line">                                        # 空串</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;blank:+word&#125;</span><br><span class="line">                                        # 空串</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:+word&#125;</span><br><span class="line">word</span><br></pre></td></tr></table></figure></p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
-<p>循序渐进DB2 （第2章~第3章）</p>
+<p>Linux Shell命令行及脚本编程实例详解 （第5章）<br>鸟哥的Linux私房菜 基础学习篇 （第10章）</p>
 </blockquote>
 
       
@@ -477,7 +524,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/db2/" rel="tag"># DB2</a>
+            <a href="/tags/shell/" rel="tag"># Shell</a>
           
         </div>
       
@@ -490,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/database/db2/db2数据库安装/" rel="next" title="DB2数据库安装">
-                <i class="fa fa-chevron-left"></i> DB2数据库安装
+              <a href="/shell/shell编程—判断语句/" rel="next" title="Shell编程 — 判断语句">
+                <i class="fa fa-chevron-left"></i> Shell编程 — 判断语句
               </a>
             
           </div>
@@ -500,8 +547,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/virtualbox/virtualbox共享文件夹/" rel="prev" title="Virtualbox共享文件夹">
-                Virtualbox共享文件夹 <i class="fa fa-chevron-right"></i>
+              <a href="/shell/shell编程—变量/" rel="prev" title="Shell编程 — 变量">
+                Shell编程 — 变量 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DB2体系结构图"><span class="nav-number">1.</span> <span class="nav-text">DB2体系结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DB2服务器环境变量"><span class="nav-number">2.</span> <span class="nav-text">DB2服务器环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建实例"><span class="nav-number">3.1.</span> <span class="nav-text">创建实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例相关命令"><span class="nav-number">3.2.</span> <span class="nav-text">实例相关命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置实例"><span class="nav-number">3.3.</span> <span class="nav-text">配置实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">4.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库"><span class="nav-number">4.1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库相关操作"><span class="nav-number">4.2.</span> <span class="nav-text">数据库相关操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置数据库"><span class="nav-number">4.3.</span> <span class="nav-text">配置数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲池"><span class="nav-number">5.</span> <span class="nav-text">缓冲池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建缓冲池"><span class="nav-number">5.1.</span> <span class="nav-text">创建缓冲池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲池相关操作"><span class="nav-number">5.2.</span> <span class="nav-text">缓冲池相关操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">6.</span> <span class="nav-text">表空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表空间"><span class="nav-number">6.1.</span> <span class="nav-text">创建表空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表空间相关操作"><span class="nav-number">6.2.</span> <span class="nav-text">表空间相关操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#间接参数扩展"><span class="nav-number">1.</span> <span class="nav-text">间接参数扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量名扩展"><span class="nav-number">2.</span> <span class="nav-text">变量名扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大小写修改（bash-4-0-新特性）"><span class="nav-number">3.</span> <span class="nav-text">大小写修改（bash 4.0 新特性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串移除"><span class="nav-number">4.</span> <span class="nav-text">字符串移除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串截取"><span class="nav-number">5.</span> <span class="nav-text">字符串截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串删除与替换"><span class="nav-number">6.</span> <span class="nav-text">字符串删除与替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串长度"><span class="nav-number">7.</span> <span class="nav-text">字符串长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量的测试与内容替换"><span class="nav-number">8.</span> <span class="nav-text">变量的测试与内容替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
