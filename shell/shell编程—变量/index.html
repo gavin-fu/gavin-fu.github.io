@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gavin&#39;s Blog">
 <meta property="og:description" content="Shell编程之变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T13:02:18.168Z">
+<meta property="og:updated_time" content="2017-12-14T13:06:04.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell编程 — 变量">
 <meta name="twitter:description" content="Shell编程之变量">
@@ -413,7 +413,7 @@
       
         <p>Shell编程之变量</p>
 <a id="more"></a>
-<h3 id="Bash常见的内部变量"><a href="#Bash常见的内部变量" class="headerlink" title="Bash常见的内部变量"></a>Bash常见的内部变量</h3><p>可使用 <code>set、declare、typeset</code> 命令查看内部变量<br>可使用 <code>env</code> 查看环境变量</p>
+<h3 id="Bash常见的内部变量"><a href="#Bash常见的内部变量" class="headerlink" title="Bash常见的内部变量"></a>Bash常见的内部变量</h3><p>可使用 <code>set</code>、<code>declare</code>、<code>typeset</code> 命令查看内部变量<br>可使用 <code>env</code> 查看环境变量</p>
 <table>
 <thead>
 <tr>
@@ -507,6 +507,9 @@
 </ol>
 <p><strong>语法</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">declare [-aAfFgilrtux] [-p] [name[=value] ...]</span><br><span class="line">typeset [-aAfFgilrtux] [-p] [name[=value] ...]</span><br><span class="line"></span><br><span class="line">常用选项与参数：</span><br><span class="line">-a ：定义为普通数组（普通数组只能使用整数作为数组下标,起始下标为 0）</span><br><span class="line">-A ：定义为关联数组（关联数组可以使用字符串作为数组索引,Bash从4.0版本开始支持关联数组）</span><br><span class="line">-i ：定义成为整数数字</span><br><span class="line">-x ：用法与 export 一样，就是将后面的 variable 变成环境变量；</span><br><span class="line">-r ：将变量设置成为 readonly 类型，该变量不可被更改内容，也不能 unset</span><br><span class="line">-p ：打印变量内容</span><br></pre></td></tr></table></figure></p>
 <p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 定义变量</span><br><span class="line">[gavin@localhost test]$ declare -i num=10</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 打印变量内容</span><br><span class="line">[gavin@localhost test]$ declare -p num</span><br><span class="line">declare -i num="10"</span><br><span class="line"></span><br><span class="line">[gavin@localhost test]$ declare -p BASH</span><br><span class="line">declare -- BASH="/bin/bash"</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><blockquote>
+<p>Linux Shell命令行及脚本编程实例详解 （第5章）<br>鸟哥的Linux私房菜 基础学习篇 （第10章）</p>
+</blockquote>
 
       
     </div>
@@ -704,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bash常见的内部变量"><span class="nav-number">1.</span> <span class="nav-text">Bash常见的内部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bash中的特殊参数"><span class="nav-number">2.</span> <span class="nav-text">Bash中的特殊参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare-typeset-定义变量"><span class="nav-number">3.</span> <span class="nav-text">declare / typeset 定义变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bash常见的内部变量"><span class="nav-number">1.</span> <span class="nav-text">Bash常见的内部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bash中的特殊参数"><span class="nav-number">2.</span> <span class="nav-text">Bash中的特殊参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#declare-typeset-定义变量"><span class="nav-number">3.</span> <span class="nav-text">declare / typeset 定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
