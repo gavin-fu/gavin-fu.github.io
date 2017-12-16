@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gavin&#39;s Blog">
 <meta property="og:description" content="shell编程之变量进阶">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T11:48:19.713Z">
+<meta property="og:updated_time" content="2017-12-14T13:44:32.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell编程 — 变量进阶">
 <meta name="twitter:description" content="shell编程之变量进阶">
@@ -428,7 +428,7 @@
 <p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var="This is a line of text"</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:5&#125;</span><br><span class="line">is a line of text</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:0:4&#125;</span><br><span class="line">This</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:(-4)&#125;</span><br><span class="line">text</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var:0-4&#125;</span><br><span class="line">text</span><br></pre></td></tr></table></figure></p>
 <h3 id="字符串删除与替换"><a href="#字符串删除与替换" class="headerlink" title="字符串删除与替换"></a>字符串删除与替换</h3><p><code>${PARAMETER/PATTERN/STRING} </code>   ：替换第一个匹配的字符串<br><code>${PARAMETER//PATTERN/STRING}</code>   ：替换所有匹配的字符串<br><code>${PARAMETER/PATTERN} </code>          ：删除第一个匹配的字符串<br><code>${PARAMETER//PATTERN}</code>          ：删除所有匹配的字符串</p>
 <p><strong>示例</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var=aabbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var/a/A&#125;</span><br><span class="line">Aabbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var//a/A&#125;</span><br><span class="line">AAbbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var/a&#125;</span><br><span class="line">abbcc</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;var//[a-z]&#125; # 删除变量中所有的 a-z 字符</span><br><span class="line">                                        # 变量字符串全部删除</span><br></pre></td></tr></table></figure></p>
-<h3 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h3><p>获取变量字符穿长度</p>
+<h3 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h3><p><code>${#string}</code>获取变量字符穿长度</p>
 <p><strong>示例</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ var='啊AA'</span><br><span class="line">[gavin@localhost ~]$ echo $&#123;#var&#125;</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 <h3 id="变量的测试与内容替换"><a href="#变量的测试与内容替换" class="headerlink" title="变量的测试与内容替换"></a>变量的测试与内容替换</h3><table>
