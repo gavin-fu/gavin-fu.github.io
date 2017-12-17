@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Gavin&#39;s Blog">
 <meta property="og:description" content="Shell编程之判断语句">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T11:46:15.250Z">
+<meta property="og:updated_time" content="2017-12-17T08:07:38.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell编程 — 判断语句">
 <meta name="twitter:description" content="Shell编程之判断语句">
@@ -616,6 +616,11 @@
 </tr>
 </tbody>
 </table>
+<p><strong>注：使用 -eq、-lt、-gt ……等数值判断符时，需要确保判断符两侧为整数类型,或可以转换为整数的字符串，否则：</strong>  </p>
+<ol>
+<li>在 []、test 中直接直接报错（integer expression expected）</li>
+<li>在 [[ ]] 中，非整数类型会或不能转换为整数的字符串，将会转换为0之后再进行判断  </li>
+</ol>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <p>Linux Shell命令行及脚本编程实例详解 （第6章）</p>
 </blockquote>
@@ -749,7 +754,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="shell" />
+  <meta name="keywords" content="shell, array" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Shell编程之判断语句">
-<meta name="keywords" content="shell">
+<meta name="description" content="Shell编程之数组">
+<meta name="keywords" content="shell, array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell判断语句">
-<meta property="og:url" content="http://yoursite.com/shell/shell判断语句/index.html">
+<meta property="og:title" content="Shell编程 — 数组">
+<meta property="og:url" content="http://yoursite.com/shell/shell编程—数组/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="Shell编程之判断语句">
+<meta property="og:description" content="Shell编程之数组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-13T13:16:58.502Z">
+<meta property="og:updated_time" content="2017-12-17T07:52:55.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell判断语句">
-<meta name="twitter:description" content="Shell编程之判断语句">
+<meta name="twitter:title" content="Shell编程 — 数组">
+<meta name="twitter:description" content="Shell编程之数组">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/shell/shell判断语句/"/>
+  <link rel="canonical" href="http://yoursite.com/shell/shell编程—数组/"/>
 
 
 
 
 
-  <title>Shell判断语句 | Gavin's Blog</title>
+  <title>Shell编程 — 数组 | Gavin's Blog</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/shell/shell判断语句/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/shell/shell编程—数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell判断语句</h1>
+          <h1 class="post-title" itemprop="name headline">Shell编程 — 数组</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T00:17:18+08:00">
-                2017-12-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T09:10:07+08:00">
+                2017-12-17
               </time>
             
 
@@ -377,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/shell/shell判断语句/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/shell/shell判断语句/" itemprop="commentsCount"></span>
+                <a href="/shell/shell编程—数组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/shell/shell编程—数组/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -411,214 +411,13 @@
       
 
       
-        <p>Shell编程之判断语句</p>
+        <p>Shell编程之数组</p>
 <a id="more"></a>
-<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><p><strong>if</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if condition; then</span><br><span class="line">    command</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p><strong>if else</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if condition; then</span><br><span class="line">    command1</span><br><span class="line">else</span><br><span class="line">    command2</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p><strong>if else-if</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if condition1; then</span><br><span class="line">    command1</span><br><span class="line">elif condition2; then </span><br><span class="line">    command2</span><br><span class="line">else</span><br><span class="line">    commandN</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<h3 id="amp-amp-语句"><a href="#amp-amp-语句" class="headerlink" title="&amp;&amp; || 语句"></a>&amp;&amp; || 语句</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">condition &amp;&amp; command;	# 如果condition为真,则执行command</span><br><span class="line">condition || command1;	# 如果condition为假,则执行command</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 可用以下语句替代 if else 语句</span><br><span class="line"><span class="meta">#</span> 如果condition为真,则执行command1,否则执行command2</span><br><span class="line">condition &amp;&amp; command1 || command2;</span><br></pre></td></tr></table></figure>
-<p>若执行判断失败，需要退出shell可写成如下形式<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ 1 -eq 1 ] &amp;&amp; echo "true" || &#123; echo "false"; exit 1 &#125;</span><br><span class="line"><span class="meta">#</span> 大括号(&#123;&#125;)内侧两边必须保留一个空格，语句1（echo "false";）与语句2（exit 1）之间必须保留一个空格</span><br></pre></td></tr></table></figure></p>
-<p>切不可写成如下形式:<br><code>[ 1 -eq 1 ] &amp;&amp; echo “true” || $(echo “false”; exit 1)</code><br>退出的是子shell，并不是当前shell</p>
-<h3 id="case-语句"><a href="#case-语句" class="headerlink" title="case 语句"></a>case 语句</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">case 值 in</span><br><span class="line">    模式1)</span><br><span class="line">        command1</span><br><span class="line">    ;;</span><br><span class="line">    模式2）</span><br><span class="line">        command2</span><br><span class="line">    ;;</span><br><span class="line">    *)</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-<h2 id="判断条件"><a href="#判断条件" class="headerlink" title="判断条件"></a>判断条件</h2><h3 id="文件判断"><a href="#文件判断" class="headerlink" title="文件判断"></a>文件判断</h3><table>
-<thead>
-<tr>
-<th>判断符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-e file</td>
-<td>如果file存在则为真</td>
-</tr>
-<tr>
-<td>-f file</td>
-<td>如果file存在且为普通文件则为真</td>
-</tr>
-<tr>
-<td>-d file</td>
-<td>如果file存在且为目录则为真</td>
-</tr>
-<tr>
-<td>-c file</td>
-<td>如果file存在且为字符型特殊文件则为真</td>
-</tr>
-<tr>
-<td>-b file</td>
-<td>如果file存在且为特殊块文件则为真</td>
-</tr>
-<tr>
-<td>-p file</td>
-<td>如果file存在且为命名管道文件则为真</td>
-</tr>
-<tr>
-<td>-S file</td>
-<td>如果file存在且为套接字文件则为真</td>
-</tr>
-<tr>
-<td>-L file</td>
-<td>如果file存在且为符号链接则为真（与-h一致）</td>
-</tr>
-<tr>
-<td>-h file</td>
-<td>如果file存在且为符号连接则为真（与-L一致）</td>
-</tr>
-<tr>
-<td>-r file</td>
-<td>如果file存在且可读则为真</td>
-</tr>
-<tr>
-<td>-w file</td>
-<td>如果file存在且可写则为真</td>
-</tr>
-<tr>
-<td>-x file</td>
-<td>如果file存在且可执行则为真</td>
-</tr>
-<tr>
-<td>-s file</td>
-<td>如果file存在且至少有一个字符则为真</td>
-</tr>
-<tr>
-<td>-g file</td>
-<td>如果file存在且设置了 sgid位则为真</td>
-</tr>
-<tr>
-<td>-u file</td>
-<td>如果file存在且设置了 suid位则为真</td>
-</tr>
-<tr>
-<td>-t fd</td>
-<td>如果文件描述已打开且引用了一个终端则为真</td>
-</tr>
-<tr>
-<td>file1 -nt file2</td>
-<td>如果file1比file2新则为真（指mtime）</td>
-</tr>
-<tr>
-<td>file1 -ot file2</td>
-<td>如果file1比file2旧则为真（指mtime）</td>
-</tr>
-<tr>
-<td>file1 -ef file2</td>
-<td>如果file1有硬链接到file2则为真</td>
-</tr>
-</tbody>
-</table>
-<h3 id="字符串判断"><a href="#字符串判断" class="headerlink" title="字符串判断"></a>字符串判断</h3><table>
-<thead>
-<tr>
-<th>判断符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-z string</td>
-<td>string为空则为真</td>
-</tr>
-<tr>
-<td>-n string</td>
-<td>string不为空则为真</td>
-</tr>
-<tr>
-<td>string1 = string2</td>
-<td>等于则为真</td>
-</tr>
-<tr>
-<td>string1 != string1</td>
-<td>不相等则为真</td>
-</tr>
-<tr>
-<td>string1 &gt; string2</td>
-<td>如果string1的字典排序在string2之前则为真（ASCII码顺序） </td>
-</tr>
-<tr>
-<td>string1 &lt; string2</td>
-<td>如果string1的字典排序在string2之后则为真（ASCII码顺序） </td>
-</tr>
-</tbody>
-</table>
-<h3 id="数值判断"><a href="#数值判断" class="headerlink" title="数值判断"></a>数值判断</h3><table>
-<thead>
-<tr>
-<th>判断符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-eq</td>
-<td>等于则为真</td>
-</tr>
-<tr>
-<td>-ne</td>
-<td>不等于则为真</td>
-</tr>
-<tr>
-<td>-gt</td>
-<td>大于则为真</td>
-</tr>
-<tr>
-<td>-ge</td>
-<td>大于等于则为真</td>
-</tr>
-<tr>
-<td>-lt</td>
-<td>小于则为真</td>
-</tr>
-<tr>
-<td>-le</td>
-<td>小于等于则为真</td>
-</tr>
-</tbody>
-</table>
-<h3 id="AND-与-OR"><a href="#AND-与-OR" class="headerlink" title="AND 与 OR"></a>AND 与 OR</h3><p>AND: -a 等价于 &amp;&amp;<br>OR:  -o 等价于 ||  </p>
-<p><em>使用 [[ ]]判断时，只能使用 &amp;&amp; 、||</em> </p>
-<p><strong>[]：</strong><br><code> [ 1 -eq 1 ] &amp;&amp; [ 2 -eq 2 ] </code><br><code> [ 1 -eq 1 -a 2 -eq 2 ] </code></p>
-<p><strong>[[]]:</strong><br><code> [[ 1 = 1 ]] &amp;&amp; [[ 2 = 2 ]] </code><br><del><code> [[ 1 = 1 -a 2 = 2 ]] </code></del></p>
-<h2 id="与-区别"><a href="#与-区别" class="headerlink" title="[] 与 [[]] 区别"></a>[] 与 [[]] 区别</h2><p>[] 几乎在任何shell中都可以用，但是 [[]]仅在 Bash、Zsh和Ksh中可用<br>[[]] 是 [] 的高级版，<strong>字符比较最好使用 [[]]</strong></p>
-<p><strong>[]与[[]]之间的异同</strong></p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>[[ ]]</th>
-<th>[ ]</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>String comparison</td>
-<td>&gt;</td>
-<td>> </td>
-</tr>
-<tr>
-<td>String comparison</td>
-<td>&lt;</td>
-<td>\&lt;</td>
-</tr>
-<tr>
-<td>Expression grouping</td>
-<td>( )</td>
-<td>( )</td>
-</tr>
-<tr>
-<td>Pattern matching</td>
-<td>=</td>
-<td>not available</td>
-</tr>
-<tr>
-<td>regular Expression</td>
-<td>=~</td>
-<td>not available</td>
-</tr>
-</tbody>
-</table>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p>Linux Shell命令行及脚本编程实例详解 （第6章）</p>
-</blockquote>
+<p>在 Shell中数组分为 <strong>普通数组</strong>、<strong>关联数组</strong> 两种<br>普通数组的索引只能是整数类型，下标从0开始<br>关联数组的索引可以使用字符串类型，Bash从4.0版本开始支持关联数组</p>
+<h2 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 定义普通数组</span><br><span class="line">declare -a array</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 定义关联数组</span><br><span class="line">declare -A array</span><br></pre></td></tr></table></figure>
+<h2 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h2><p><strong>普通数组</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 方式一</span><br><span class="line"><span class="meta">#</span> 使用默认分隔符（IFS）初始化数组</span><br><span class="line"><span class="meta">#</span> 可以不定义（declare -a），而直接初始化数组</span><br><span class="line">arr=(a b c)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 自定义分隔符初始化数组</span><br><span class="line"><span class="meta">#</span> 数组必须先定义，后赋值</span><br><span class="line">OLDIFS=$IFS</span><br><span class="line">IFS=','</span><br><span class="line">declare -a arr2=(a,b,c)</span><br><span class="line">IFS=$OLDIFS</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 方式二</span><br><span class="line"><span class="meta">#</span> 根据元素索引进行初始化</span><br><span class="line"><span class="meta">#</span> 数组也可以不定义，而直接初始化</span><br><span class="line">arr3[0]=a</span><br><span class="line">arr3[1]=b</span><br><span class="line">arr3[2]=c</span><br></pre></td></tr></table></figure></p>
+<p><strong>关联数组</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 方式一</span><br><span class="line"><span class="meta">#</span> 可以不定义，而直接初始化</span><br><span class="line">arr=([index1]=1 [index2]=2 [index3]=3)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 方式二</span><br><span class="line"><span class="meta">#</span> 可以不定义，而直接初始化</span><br><span class="line">arr2['1']=a</span><br><span class="line">arr2['2']=b</span><br><span class="line">arr2['3']=c</span><br></pre></td></tr></table></figure></p>
+<h2 id="读取数组"><a href="#读取数组" class="headerlink" title="读取数组"></a>读取数组</h2><p>普通数组与关联数组通用操作<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 获取特定元素</span><br><span class="line">echo $&#123;array[index]&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 获取数组中所有元素</span><br><span class="line">echo $&#123;array[@]&#125;</span><br><span class="line">echo $&#123;array[*]&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 获取数组索引</span><br><span class="line">echo $&#123;!array[@]&#125;</span><br><span class="line">echo $&#123;!array[*]&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 获取数组长度</span><br><span class="line">echo $&#123;#array[*]&#125;</span><br><span class="line">echo $&#123;#array[@]&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 遍历数组</span><br><span class="line"><span class="meta">#</span> 使用for循环遍历数组，只能使用 $&#123;array[@]&#125;，而不能使用 $&#123;array[*]&#125;</span><br><span class="line">for i in "$&#123;array[@]&#125;"; do</span><br><span class="line">    echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -649,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/database/db2/db2数据库对象—索引/" rel="next" title="DB2数据库对象 — 索引">
-                <i class="fa fa-chevron-left"></i> DB2数据库对象 — 索引
+              <a href="/shell/shell编程—循环语句/" rel="next" title="Shell编程 — 循环语句">
+                <i class="fa fa-chevron-left"></i> Shell编程 — 循环语句
               </a>
             
           </div>
@@ -658,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/shell/shell变量进阶/" rel="prev" title="Shell变量进阶">
-                Shell变量进阶 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -749,7 +544,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -820,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断语句"><span class="nav-number">1.</span> <span class="nav-text">判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-语句"><span class="nav-number">1.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-amp-语句"><span class="nav-number">1.2.</span> <span class="nav-text">&& || 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#case-语句"><span class="nav-number">1.3.</span> <span class="nav-text">case 语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断条件"><span class="nav-number">2.</span> <span class="nav-text">判断条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件判断"><span class="nav-number">2.1.</span> <span class="nav-text">文件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串判断"><span class="nav-number">2.2.</span> <span class="nav-text">字符串判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值判断"><span class="nav-number">2.3.</span> <span class="nav-text">数值判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AND-与-OR"><span class="nav-number">2.4.</span> <span class="nav-text">AND 与 OR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与-区别"><span class="nav-number">3.</span> <span class="nav-text">[] 与 [[]] 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义数组"><span class="nav-number">1.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化数组"><span class="nav-number">2.</span> <span class="nav-text">初始化数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数组"><span class="nav-number">3.</span> <span class="nav-text">读取数组</span></a></li></ol></div>
             
 
           </div>
