@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[DB2调优—SQL调优]]></title>
+    <url>%2Fdatabase%2Fdb2%2Fdb2%E4%BC%98%E5%8C%96%E2%80%94sql%2F</url>
+    <content type="text"><![CDATA[基本概念表访问方式表关联方式常用工具db2expln]]></content>
+      <categories>
+        <category>Database</category>
+        <category>DB2</category>
+      </categories>
+      <tags>
+        <tag>DB2</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Shell编程 — 数组]]></title>
     <url>%2Fshell%2Fshell%E7%BC%96%E7%A8%8B%E2%80%94%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[Shell编程之数组 在 Shell中数组分为 普通数组、关联数组 两种普通数组的索引只能是整数类型，下标从0开始关联数组的索引可以使用字符串类型，Bash从4.0版本开始支持关联数组 定义数组12345# 定义普通数组declare -a array# 定义关联数组declare -A array 初始化数组普通数组12345678910111213141516171819# 方式一# 使用默认分隔符（IFS）初始化数组# 可以不定义（declare -a），而直接初始化数组arr=(a b c)# 自定义分隔符初始化数组# 数组必须先定义，后赋值OLDIFS=$IFSIFS=','declare -a arr2=(a,b,c)IFS=$OLDIFS# 方式二# 根据元素索引进行初始化# 数组也可以不定义，而直接初始化arr3[0]=aarr3[1]=barr3[2]=c 关联数组123456789# 方式一# 可以不定义，而直接初始化arr=([index1]=1 [index2]=2 [index3]=3)# 方式二# 可以不定义，而直接初始化arr2['1']=aarr2['2']=barr2['3']=c 读取数组普通数组与关联数组通用操作1234567891011121314151617181920# 获取特定元素echo $&#123;array[index]&#125;# 获取数组中所有元素echo $&#123;array[@]&#125;echo $&#123;array[*]&#125;# 获取数组索引echo $&#123;!array[@]&#125;echo $&#123;!array[*]&#125;# 获取数组长度echo $&#123;#array[*]&#125;echo $&#123;#array[@]&#125;# 遍历数组# 使用for循环遍历数组，只能使用 $&#123;array[@]&#125;，而不能使用 $&#123;array[*]&#125;for i in "$&#123;array[@]&#125;"; do echo $idone]]></content>
+    <content type="text"><![CDATA[Shell编程之数组 在 Shell中数组分为 普通数组、关联数组 两种普通数组的索引只能是整数类型，下标从0开始关联数组的索引可以使用字符串类型，Bash从4.0版本开始支持关联数组 定义数组12345# 定义普通数组declare -a array# 定义关联数组declare -A array 初始化数组普通数组123456789101112131415161718# 方式一# 使用默认分隔符（IFS）初始化数组# 可以不定义（declare -a），而直接初始化数组arr=(a b c)# 自定义分隔符初始化数组# 数组必须先定义，后赋值OLDIFS=$IFSIFS=','declare -a arr2=(a,b,c)IFS=$OLDIFS# 方式二# 可以不定义，而直接初始化arr3[0]=aarr3[1]=barr3[2]=c 关联数组12345678910# 方式一# 可以不定义，而直接初始化arr=([index1]=1 [index2]=2 [index3]=3)# 方式二# 根据元素索引进行初始化# 若定义的下标不能转换为数值，则数组必须先定义后赋值，否则下标默认转换为0arr2['1']=aarr2['2']=barr2['3']=c 读取数组普通数组与关联数组通用操作1234567891011121314151617181920# 获取特定元素echo $&#123;array[index]&#125;# 获取数组中所有元素echo $&#123;array[@]&#125;echo $&#123;array[*]&#125;# 获取数组索引echo $&#123;!array[@]&#125;echo $&#123;!array[*]&#125;# 获取数组长度echo $&#123;#array[*]&#125;echo $&#123;#array[@]&#125;# 遍历数组# 使用for循环遍历数组，只能使用 $&#123;array[@]&#125;，而不能使用 $&#123;array[*]&#125;for i in "$&#123;array[@]&#125;"; do echo $idone]]></content>
       <categories>
         <category>Shell</category>
       </categories>
