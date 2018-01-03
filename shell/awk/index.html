@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="VirtualBox," />
+  <meta name="keywords" content="awk" />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="配置 VirtualBox共享文件夹">
-<meta name="keywords" content="VirtualBox">
+<meta name="description" content="awk 是一种用于文本处理的解释性程序设计语言">
+<meta name="keywords" content="awk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Virtualbox共享文件夹">
-<meta property="og:url" content="http://yoursite.com/virtualbox/virtualbox共享文件夹/index.html">
+<meta property="og:title" content="Awk">
+<meta property="og:url" content="http://yoursite.com/shell/awk/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="配置 VirtualBox共享文件夹">
+<meta property="og:description" content="awk 是一种用于文本处理的解释性程序设计语言">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/virtualbox/virtualbox共享文件夹/mount.png">
-<meta property="og:updated_time" content="2017-12-09T14:14:36.960Z">
+<meta property="og:updated_time" content="2018-01-03T13:46:29.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Virtualbox共享文件夹">
-<meta name="twitter:description" content="配置 VirtualBox共享文件夹">
-<meta name="twitter:image" content="http://yoursite.com/virtualbox/virtualbox共享文件夹/mount.png">
+<meta name="twitter:title" content="Awk">
+<meta name="twitter:description" content="awk 是一种用于文本处理的解释性程序设计语言">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/virtualbox/virtualbox共享文件夹/"/>
+  <link rel="canonical" href="http://yoursite.com/shell/awk/"/>
 
 
 
 
 
-  <title>Virtualbox共享文件夹 | Gavin's Blog</title>
+  <title>Awk | Gavin's Blog</title>
   
 
 
@@ -309,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/virtualbox/virtualbox共享文件夹/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/shell/awk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -326,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Virtualbox共享文件夹</h1>
+          <h1 class="post-title" itemprop="name headline">Awk</h1>
         
 
         <div class="post-meta">
@@ -338,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T21:45:25+08:00">
-                2017-12-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T21:02:57+08:00">
+                2018-01-02
               </time>
             
 
@@ -361,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/virtualbox/" itemprop="url" rel="index">
-                    <span itemprop="name">VirtualBox</span>
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">Shell</span>
                   </a>
                 </span>
 
@@ -379,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/virtualbox/virtualbox共享文件夹/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/virtualbox/virtualbox共享文件夹/" itemprop="commentsCount"></span>
+                <a href="/shell/awk/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/shell/awk/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -413,24 +411,36 @@
       
 
       
-        <p>配置 VirtualBox共享文件夹</p>
+        <p>awk 是一种用于文本处理的解释性程序设计语言</p>
 <a id="more"></a>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>VirtualBox 5.2.2</li>
-<li>CentOS7</li>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>一个awk指令由一个模式(pattern)后跟一个动作(action)组成。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk pattern1 &#123;actions1&#125; pattern2 &#123;actions2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>awk可以直接在命令行中运行，也可以将指令放在文件中运行。awk常用选项如下：</p>
+<ul>
+<li>-F ‘ ‘ : 指定输入数据的列分隔符 </li>
+<li>-v var=value : 在awk程序中定义变量var</li>
+<li>-f programFile : 指定awk程序文件，代理在命令行指定awk指令</li>
 </ul>
-<h2 id="添加虚拟光驱"><a href="#添加虚拟光驱" class="headerlink" title="添加虚拟光驱"></a>添加虚拟光驱</h2><p>在 VirtualBox管理器中选择需要设置共享文件夹的虚拟机（虚拟机必须关闭），并进行如下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设置 -&gt; 存储 -&gt; 控制器IDE -&gt; 添加 虚拟 光驱 -&gt; 留空</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装增强功能"><a href="#安装增强功能" class="headerlink" title="安装增强功能"></a>安装增强功能</h2><ol>
-<li><p>启动虚拟机，然后在 VirtualBox菜单栏选中 “设备 -&gt; 安装增强功能”<br>此操作将挂载 VirtualBox工具包至虚拟机中（CentOS7 默认挂载至: /run/media/user/VBox_GAs_5.2.2）</p>
-</li>
-<li><p>安装增强工具包  </p>
-</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /run/media/gavin/VBox_GAs_5.2.2</span><br><span class="line">sudo ./VBoxLinuxAdditions.run       # 安装增强工具包</span><br><span class="line">sudo reboot                         # 重启虚拟机</span><br></pre></td></tr></table></figure>
-<h2 id="设置共享文件夹"><a href="#设置共享文件夹" class="headerlink" title="设置共享文件夹"></a>设置共享文件夹</h2><p>在 VirtualBox管理器中进行如下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设置 -&gt; 共享文件夹 -&gt; 右键选择 &quot;固定分配&quot; -&gt; 添加共享文件夹</span><br></pre></td></tr></table></figure></p>
-<p><img src="mount.png" alt=""><br>注：不要选择 “自动挂载”， 否则挂载共享文件夹会出现错误：<br><code>/sbin/mount.vboxsf: mounting failed with the error: Protocol error</code></p>
-<h2 id="挂载共享文件夹"><a href="#挂载共享文件夹" class="headerlink" title="挂载共享文件夹"></a>挂载共享文件夹</h2><p>登入虚拟机，执行如下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su -                                # root用户操作</span><br><span class="line">mkdir /mnt/shared                   # 创建挂载目录</span><br><span class="line">mount -t vboxsf share /mnt/shared   # 挂载共享文件夹</span><br></pre></td></tr></table></figure></p>
-<p>注：共享文件夹与虚拟机挂载目录名字不要相同</p>
+<h2 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h2><ul>
+<li>FS : 目前的分隔字符,默认是空白键</li>
+<li>NR : 表示记录数量(number of records),在执行过程中对应于当前行号</li>
+<li>NF : 表示字段数量(number of fields),在执行过程中对应于当前行的字段数</li>
+<li>$0 : 这个变量包含执行过程中当前行的文本内容</li>
+<li>$1 : 这个变量包含第一个字段的文本内容</li>
+</ul>
+<h2 id="将外部变量值传递给awk"><a href="#将外部变量值传递给awk" class="headerlink" title="将外部变量值传递给awk"></a>将外部变量值传递给awk</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 借助选项 -v ,我们可以将外部值(并非来自stdin)传递给 awk</span><br><span class="line">awk -v VARIABLE=$VAR'&#123; print VARIABLE &#125;'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 直接在指令后定义变量</span><br><span class="line">awk '&#123; print VARIABLE &#125;' VARIABLE=$VAR</span><br></pre></td></tr></table></figure>
+<h2 id="设置字段分隔符"><a href="#设置字段分隔符" class="headerlink" title="设置字段分隔符"></a>设置字段分隔符</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 使用 -F 选项指定分隔符</span><br><span class="line">awk -F: '&#123; print $NF &#125;'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 在 BEGIN指令中设置 FS特殊变量</span><br><span class="line">awk 'BEGIN &#123;FS=":"&#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="对行进行过滤"><a href="#对行进行过滤" class="headerlink" title="对行进行过滤"></a>对行进行过滤</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">awk 'NR &lt; 5'        # 行号小于5的行</span><br><span class="line">awk 'NR==1,NR==4'   # 行号在1到5之间的行</span><br><span class="line"></span><br><span class="line">awk '/linux/'       # 包含样式linux的行(可以用正则表达式来指定样式)</span><br><span class="line">awk '!/linux/'      # 不包含包含样式linux的行</span><br></pre></td></tr></table></figure>
+<h2 id="用-getline-读取行"><a href="#用-getline-读取行" class="headerlink" title="用 getline 读取行"></a>用 getline 读取行</h2><p>通常, grep 默认读取一个文件的所有行。如果只想读取某一行,可以使用 getline<br>语法: getline var<br>变量 var 就包含了特定行的内容<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seq 5 | awk 'BEGIN &#123; getline; print "Read ahead first line", $0 &#125; &#123; print $0 &#125;'</span><br></pre></td></tr></table></figure></p>
+<h2 id="从-awk-中读取命令输出"><a href="#从-awk-中读取命令输出" class="headerlink" title="从 awk 中读取命令输出"></a>从 awk 中读取命令输出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo | awk '&#123; "grep root /etc/passwd" | getline cmdout ; print cmdout &#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seq 5 |awk '&#123;if( NR &lt; 3 )&#123; print $1 &#125;&#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo |awk '&#123;for(i=1; i&lt;=5; i++)&#123; print i &#125;&#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="内建字符串控制函数"><a href="#内建字符串控制函数" class="headerlink" title="内建字符串控制函数"></a>内建字符串控制函数</h2><p><strong>length(string)</strong><br>返回字符串的长度<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'a|bb|ccc' |awk -F '|' '&#123;printf $1; print length($1)&#125;'</span><br><span class="line">a1</span><br></pre></td></tr></table></figure></p>
+<p><strong>index(string, search_string)</strong><br>返回 search_string 在字符串中出现的位置<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'abcd' |awk '&#123;print index($0, "a")&#125;'</span><br><span class="line">1</span><br></pre></td></tr></table></figure></p>
+<p><strong>split(string,array,delimiter)</strong><br>用定界符生成一个字符串列表,并将该列表存入数组<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'a|bb|ccc' |awk '&#123;print split($0, array, "|")&#125;'</span><br><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<p><strong>substr(string, start-position, end-position)</strong><br>在字符串中用字符起止偏移量生成子串,并返回该子串<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'abc' |awk '&#123;print substr($0, 1, 1)&#125;'</span><br><span class="line">a</span><br></pre></td></tr></table></figure></p>
+<p><strong>sub(regex, replacement_str,string)</strong><br>将正则表达式匹配到的第一处内容替换成 replacment_str<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'abc123' |awk '&#123;sub("[a-z]", 0, $0); print $0&#125;'</span><br><span class="line">0bc123</span><br></pre></td></tr></table></figure></p>
+<p><strong>gsub(regex, replacment_str, string)</strong><br>和 sub() 类似。不过该函数会替换正则表达式匹配到的所有内容</p>
+<p><strong>match(string, regex)</strong><br>检查正则表达式是否能够匹配字符串。如果能够匹配,返回非0值;否则,返回0。 match() 有两个相关的特殊变量,分别是 RSTART 和RLENGTH 。变量 RSTART 包含正则表达式所匹配内容的起始位置,而变量 RLENGTH 包含正则表达式所匹配内容的长度<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[gavin@localhost ~]$ echo 'abc123' |awk '&#123;result=match($0, "[a-z]+"); print result; print RSTART; print RLENGTH&#125;'</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">3</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -448,7 +458,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/virtualbox/" rel="tag"># VirtualBox</a>
+            <a href="/tags/shell/" rel="tag"># Shell</a>
           
         </div>
       
@@ -461,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/database/db2/db2体系结构/" rel="next" title="DB2体系结构">
-                <i class="fa fa-chevron-left"></i> DB2体系结构
+              <a href="/shell/shell编程—数组/" rel="next" title="Shell编程 — 数组">
+                <i class="fa fa-chevron-left"></i> Shell编程 — 数组
               </a>
             
           </div>
@@ -470,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/linux/linux磁盘操作/" rel="prev" title="Linux磁盘操作">
-                Linux磁盘操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加虚拟光驱"><span class="nav-number">2.</span> <span class="nav-text">添加虚拟光驱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装增强功能"><span class="nav-number">3.</span> <span class="nav-text">安装增强功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置共享文件夹"><span class="nav-number">4.</span> <span class="nav-text">设置共享文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载共享文件夹"><span class="nav-number">5.</span> <span class="nav-text">挂载共享文件夹</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊变量"><span class="nav-number">2.</span> <span class="nav-text">特殊变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将外部变量值传递给awk"><span class="nav-number">3.</span> <span class="nav-text">将外部变量值传递给awk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置字段分隔符"><span class="nav-number">4.</span> <span class="nav-text">设置字段分隔符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对行进行过滤"><span class="nav-number">5.</span> <span class="nav-text">对行进行过滤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-getline-读取行"><span class="nav-number">6.</span> <span class="nav-text">用 getline 读取行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从-awk-中读取命令输出"><span class="nav-number">7.</span> <span class="nav-text">从 awk 中读取命令输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if语句"><span class="nav-number">8.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环语句"><span class="nav-number">9.</span> <span class="nav-text">for循环语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内建字符串控制函数"><span class="nav-number">10.</span> <span class="nav-text">内建字符串控制函数</span></a></li></ol></div>
             
 
           </div>
