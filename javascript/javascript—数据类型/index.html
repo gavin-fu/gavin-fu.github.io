@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="sql, 规范" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="良好的编码习惯可以减少出问题的几率和后期代码维护的成本">
-<meta name="keywords" content="sql, 规范">
+<meta name="description" content="JavaScript 数据类型">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL脚本编码规范">
-<meta property="og:url" content="http://yoursite.com/sql/sql脚本编码规范/index.html">
+<meta property="og:title" content="JavaScript—数据类型">
+<meta property="og:url" content="http://yoursite.com/javascript/javascript—数据类型/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="良好的编码习惯可以减少出问题的几率和后期代码维护的成本">
+<meta property="og:description" content="JavaScript 数据类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-11T14:06:05.835Z">
+<meta property="og:updated_time" content="2018-01-14T04:44:40.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL脚本编码规范">
-<meta name="twitter:description" content="良好的编码习惯可以减少出问题的几率和后期代码维护的成本">
+<meta name="twitter:title" content="JavaScript—数据类型">
+<meta name="twitter:description" content="JavaScript 数据类型">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/sql/sql脚本编码规范/"/>
+  <link rel="canonical" href="http://yoursite.com/javascript/javascript—数据类型/"/>
 
 
 
 
 
-  <title>SQL脚本编码规范 | Gavin's Blog</title>
+  <title>JavaScript—数据类型 | Gavin's Blog</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/sql/sql脚本编码规范/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/javascript/javascript—数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小付">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SQL脚本编码规范</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript—数据类型</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T19:16:05+08:00">
-                2017-12-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T22:59:13+08:00">
+                2018-01-13
               </time>
             
 
@@ -359,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sql/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -377,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/sql/sql脚本编码规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/sql/sql脚本编码规范/" itemprop="commentsCount"></span>
+                <a href="/javascript/javascript—数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/javascript/javascript—数据类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -411,38 +411,249 @@
       
 
       
-        <p>良好的编码习惯可以减少出问题的几率和后期代码维护的成本</p>
+        <p>JavaScript 数据类型</p>
 <a id="more"></a>
-<h2 id="基本要求"><a href="#基本要求" class="headerlink" title="基本要求"></a>基本要求</h2><ol>
-<li>脚本文件名称使用小写，单词与单词间使用下划线分割，最好对应于操作的表名</li>
-<li>脚本采用 UTF-8编码， UNIX格式</li>
-<li>脚本必须写好基本注释信息（如： 脚本功能，加载时机频率，开发人员…）</li>
-</ol>
-<h2 id="编写规范"><a href="#编写规范" class="headerlink" title="编写规范"></a>编写规范</h2><h3 id="注释编写"><a href="#注释编写" class="headerlink" title="注释编写"></a>注释编写</h3><p>SQL脚本中无论单行、多行注释均用 <code>–</code>标识，不使用块状注释 <code>/<em> </em>/</code></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 脚本名称：   demo.sql</span></span><br><span class="line"><span class="comment">-- 脚本功能：   sql脚本示例</span></span><br><span class="line"><span class="comment">-- 加载频率：   d</span></span><br><span class="line"><span class="comment">-- 创建人：     gavin</span></span><br><span class="line"><span class="comment">-- 创建时间：   2017-12-04</span></span><br><span class="line"><span class="comment">-- 修改人：</span></span><br><span class="line"><span class="comment">-- 修改时间：</span></span><br><span class="line"><span class="comment">-- 修改说明：</span></span><br></pre></td></tr></table></figure>
-<h3 id="字段排列"><a href="#字段排列" class="headerlink" title="字段排列"></a>字段排列</h3><ol>
-<li>每个查询字段独占一行</li>
-<li>分割字段的逗号置于字段名称之前</li>
-<li>查询字段写好注释</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>      field1      <span class="comment">-- 字段1</span></span><br><span class="line">            ,field2     <span class="comment">-- 字段2</span></span><br><span class="line">            ,field3     <span class="comment">-- 字段3</span></span><br><span class="line"><span class="keyword">from</span>        test.demo   <span class="comment">-- 示例表</span></span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<h3 id="子句排列"><a href="#子句排列" class="headerlink" title="子句排列"></a>子句排列</h3><p>同一级别的子句要对齐</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>      a.field1            <span class="comment">-- 字段1</span></span><br><span class="line">            ,a.field2           <span class="comment">-- 字段2</span></span><br><span class="line">            ,b.field3           <span class="comment">-- 字段3</span></span><br><span class="line"><span class="keyword">from</span>        test.tab1 a         <span class="comment">-- 表1</span></span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span>  test.tab2 b         <span class="comment">-- 表2</span></span><br><span class="line"><span class="keyword">on</span>          a.field1 = b.field1</span><br><span class="line"><span class="keyword">where</span>       a.field2 = <span class="string">''</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>    a.field1</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<h3 id="子句查询嵌套"><a href="#子句查询嵌套" class="headerlink" title="子句查询嵌套"></a>子句查询嵌套</h3><p>子句嵌套编排做好层次分明</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>      a.field1            <span class="comment">-- 字段1</span></span><br><span class="line">            ,a.field2           <span class="comment">-- 字段2</span></span><br><span class="line">            ,a.field3           <span class="comment">-- 字段3</span></span><br><span class="line"><span class="keyword">from</span>        test.tab1 a         <span class="comment">-- 表1</span></span><br><span class="line"><span class="keyword">where</span>       a.field2 = <span class="string">''</span></span><br><span class="line"><span class="keyword">and</span> <span class="keyword">exists</span>  (   <span class="keyword">select</span>      <span class="number">1</span></span><br><span class="line">                <span class="keyword">from</span>        test.tab2 b         <span class="comment">-- 表2</span></span><br><span class="line">                <span class="keyword">where</span>       a.field1 = b.field1</span><br><span class="line">            )</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<h3 id="字段别名"><a href="#字段别名" class="headerlink" title="字段别名"></a>字段别名</h3><ol>
-<li>如查询字段的名称与目标表字段名称不一致，则使用 <code>AS</code>为字段命别名</li>
-<li>若查询字段或表达式过长，则 <code>AS</code>最好分行对齐</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test.tgt (  <span class="comment">-- 目标表</span></span><br><span class="line">    field1              <span class="comment">-- 字段1</span></span><br><span class="line">    ,field2             <span class="comment">-- 字段2</span></span><br><span class="line">    ,field3             <span class="comment">-- 字段3</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">select</span>      field1</span><br><span class="line">            ,<span class="string">'xxx'</span>      <span class="keyword">AS</span> field2</span><br><span class="line">            ,express1 || express2 || express <span class="number">3</span></span><br><span class="line">                        <span class="keyword">AS</span> field3</span><br><span class="line"><span class="keyword">from</span>        test.src    <span class="comment">-- 目标表</span></span><br><span class="line">;</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="表别名"><a href="#表别名" class="headerlink" title="表别名"></a>表别名</h3><p>多表嵌套查询需体现层次结构，可为表命别名。使用字母 a-z标明层次, 同一层次间使用数字标明序号</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>      a1.field1       <span class="comment">-- 字段1</span></span><br><span class="line">            a2.field2       <span class="comment">-- 字段2</span></span><br><span class="line"><span class="keyword">from</span>        test.tab1 a1</span><br><span class="line">innser <span class="keyword">join</span> (   <span class="keyword">select</span>      b1.field2   <span class="keyword">as</span> field1</span><br><span class="line">                            ,b2.field2</span><br><span class="line">                <span class="keyword">from</span>        test.tab2 b1</span><br><span class="line">                <span class="keyword">inner</span> <span class="keyword">join</span>  test.tab3 b2</span><br><span class="line">                <span class="keyword">on</span>          b1.field1 = b2.field1</span><br><span class="line">            ) a2</span><br><span class="line"><span class="keyword">on</span>          a1.field1 = a2.field1</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<h3 id="特殊表命名规范"><a href="#特殊表命名规范" class="headerlink" title="特殊表命名规范"></a>特殊表命名规范</h3><ul>
-<li>历史表： 以h结尾</li>
-<li>临时表： 以tmp结尾</li>
-<li>备份表： 以8位备份日期结尾</li>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>ECMAScript 中有5中基本数据类型(Defined, Null, Boolean, Number, String)， 和一种复杂数据类型(Object)</p>
+<h3 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h3><ul>
+<li><p>Undefined类型只有一个值，即undefined;</p>
+</li>
+<li><p>在使用var声明变量但未对其加以初始化时，这个变量的值就是undefined;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test;        <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对未初始化的变量执行typeof操作符会返回undefined值，而对未声明的变量执行typeof操作符同样也会返回undefined值;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var1;</span><br><span class="line"><span class="keyword">typeof</span>  var0;   <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span>  var1;   <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无论在什么情况下都没有必要把一个变量的值显式地设置为undefined;</p>
+</li>
 </ul>
-
+<h3 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h3><ul>
+<li><p>Null类型只有一个值，即null;</p>
+</li>
+<li><p>null值表示一个空对象指针，而这也正是使用typeof操作符检测null值时会返回”object”的原因;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var0=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span> var0;    <span class="comment">// Object</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>undefined值是派生自null值的,null和undefined之间的相等操作符（==）总是返回true;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">later(<span class="literal">null</span> == <span class="literal">undefined</span>);   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只要意在保存对象的变量还没有真正保存对象，就应该明确地让该变量保存null值。这样做不仅可以体现null作为空对象指针的惯例，而且也有助于进一步区分null和undefined;</p>
+</li>
+</ul>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><ul>
+<li><p>Boolean类型只有两个字面值：true和false;</p>
+</li>
+<li><p>ECMAScript类型的值都有与这两个Boolean值等价的值。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>转换为true值</th>
+<th>转换为false值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>String</td>
+<td>任何非空字符串</td>
+<td>“‘（空字符串）</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>任何非零数字值（包括无穷大）</td>
+<td>0和NaN</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>任何对象</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>不适用</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>要将一个值转换为其对应的Boolean值，可以调用转型函数Boolean();<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> var0=<span class="literal">null</span>;</span><br><span class="line"><span class="built_in">Boolean</span>(var0);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><ul>
+<li><p>Number类型代表整数和浮点数值;</p>
+</li>
+<li><p>除了以十进制表示外，整数还可以通过八进制（以0开头）或十六进制（以0x开头）的字面值来表示;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> octal = <span class="number">023</span>;    <span class="comment">// 十进制19</span></span><br><span class="line"><span class="keyword">var</span> hex=<span class="number">0xff</span>;       <span class="comment">// 十进制255</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><ul>
+<li><p>由于保存浮点数值需要的内存空间是保存整数值的两倍，因此ECMAScript会不失时机地将浮点数值转换为整数值;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum1 = <span class="number">1.</span>;     <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">var</span> floatNum2 = <span class="number">10.00</span>;  <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>浮点数值的最高精度是17位小数，但在<strong>进行算术计算时其精确度远远不如整数</strong>;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> calc = <span class="number">0.1</span> + <span class="number">0.2</span>;   <span class="comment">// 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="数值范围"><a href="#数值范围" class="headerlink" title="数值范围"></a>数值范围</h4><ul>
+<li><p>ECMAScript能够表示的最小数值保存在<strong>Number.MIN_VALUE</strong>中,最大数值保存在<strong>Number.MAX_VALUE</strong>中;</p>
+</li>
+<li><p>如果某次计算的结果得到了一个超出JavaScript数值范围的值，那么这个数值将被自动转换成特殊的Infinity值;</p>
+</li>
+<li><p>Number.NEGATIVE_INFINITY和Number.POSITIVE_INFINITY也可以得到负和正Infinity的值;</p>
+</li>
+<li><p>Infinity不是能够参与计算的数值;</p>
+</li>
+<li><p>要想确定一个数值是不是有穷的可以使用isFinite()函数;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isFinite</span>(<span class="number">1234</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="built_in">Number</span>.MAX_VALUE + <span class="built_in">Number</span>.MAX_VALUE);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4><ul>
+<li><p>NaN，即非数值（Not a Number）是一个特殊的数值，这个数值用于表示一个本来要返回数值的操作数却未返回数值的情况;</p>
+</li>
+<li><p>在ECMAScript中，任何非数值除以0会返回NaN, 数值除以0返回Infinity;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello world"</span>/<span class="number">0</span>);   <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span>/<span class="number">0</span>);   <span class="comment">// Infinity</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>任何涉及NaN的算术操作（例如NaN/10）都会返回NaN;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span> + <span class="literal">NaN</span>)   <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NaN与任何值都不相等,包括NaN本身;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> == <span class="literal">NaN</span>);    <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>isNaN()函数用于参数是否“不是数值”，isNaN()在接收到一个值之后，会尝试将这个值转换为数值。而任何不能被转换为数值的值都会导致这个函数返回true;</p>
+<p><em>isNaN()确实也适用于对象。在基于对象调用isNaN()函数时，会首先调用对象的valueOf()方法，然后确定该方法返回的值是否可以转换为数值。如果不能，则基于这个返回值再调用toString()方法，再测试返回值。而这个过程也是ECMAScript中内置函数和操作符的一般执行流程</em></p>
+</li>
+</ul>
+<h4 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h4><ul>
+<li><strong>Number()函数</strong><ul>
+<li>如果是Boolean值，true和false将分别被转换为1和0</li>
+<li>如果是数字值，只是简单的传入和返回</li>
+<li>如果是null值，返回0</li>
+<li>如果是undefined，返回NaN</li>
+<li>如果是字符串，遵循下列规则<ul>
+<li>如果字符串中只包含数字（包括前面带加号或头号的情况），则将其转换为十进制数值，即”1”会变成1，”123”会变成123，而”011”会变成11（注意：前导的零被忽略了）；</li>
+<li>如果字符串中包含有效的浮点格式，如”1.1”，则将其转换为对应的浮点数值（同样，也会忽略前导零）；</li>
+<li>如果字符串中包含有效的十六进制格式，例如”Oxf”，则将其转换为相同大小的十进制整数值；</li>
+<li>如果字符串是空的（不包含任何字符），则将其转换为0；</li>
+<li>如果字符串中包含除上述格式之外的字符，则将其转换为NaN。</li>
+</ul>
+</li>
+<li>如果是对象，则调用对象的valueOf()方法，然后依照前面的规则转换返回的值。如果转换的结果是NaN，则调用对象的toString()方法，然后再次依照前面的规则转换返回的字符串值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="literal">true</span>);       <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="number">00011</span>);      <span class="comment">// 9， 8进制转为10进制</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="number">0xff</span>);       <span class="comment">// 255， 16进制转10进制</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>);       <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>);  <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"0001.01"</span>);  <span class="comment">// 1.01, 忽略前导0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"0xff"</span>);     <span class="comment">// 255</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">" "</span>);        <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"1  1"</span>);     <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>由于Number()函数在转换字符串时比较复杂而且不够合理，因此在处理整数的时候更常用的是parseInt()函数</em></p>
+<ul>
+<li><p><strong>parseInt()函数</strong></p>
+<ul>
+<li>parseInt()函数在转换字符串时，更多的是看其是否符合数值模式。它会忽略字符串前面的空格，直至找到第一个非空格字符;</li>
+<li>如果第一个字符不是数字字符或者正、负号，parseInt()就会返回NaN;</li>
+<li>如果第一个字符是数字字符，parseInt()会继续解析第二个字符，直到解析完所有后续字符或者遇到了一个非数字字符;</li>
+<li>parseInt()能够识别出整数格式(八进制和十六进制)。ECMAScript 3和5存在分歧，ECMAScript3中，前导”0”被当成八进制字面量，而在ECMAScript5中前导的零会被认为无效;</li>
+<li>为了消除在使用parseInt()函数时可能导致的上述困惑，<strong>可以为这个函数提供第二个参数:转换时使用的基数</strong>;<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"   1234"</span>);    <span class="comment">// 1234</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"1234asdf"</span>);   <span class="comment">// 1234</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"+1234asdf"</span>);  <span class="comment">// 1234</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"+123.4"</span>);     <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"01234"</span>);      <span class="comment">// 1234, ECMAScript5中前导0无效</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">01234</span>, <span class="number">8</span>);     <span class="comment">// 54, 第二个参数指定基数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>parseFloat()函数</strong></p>
+<ul>
+<li>与parseInt()函数类似，但是不能能够识别出整数格式(八进制和十六进制)，只解析十进制值。因此它没有用第二个参数指定基数的用法;</li>
+<li>如果字符串包含的是一个可解析为整数的数（没有小数点，或者小数点后都是零），parseFloat()会返回整数;<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"1234abc"</span>);  <span class="comment">// 1234</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"1234.00"</span>);  <span class="comment">// 1234</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"0x1234"</span>);   <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
+<li><p>String类型用于表示由零或多个16位Unicode字符组成的字符序列，即字符串;</p>
+</li>
+<li><p>如果字符串中包含双字节字符，那么length属性可能不会精确地返回字符串中的字符数目;</p>
+</li>
+<li><p>ECMAScript中的字符串是不可变的;</p>
+</li>
+</ul>
+<h4 id="其它类型转换为String"><a href="#其它类型转换为String" class="headerlink" title="其它类型转换为String"></a>其它类型转换为String</h4><ul>
+<li><strong>toString()</strong><ul>
+<li>数值、布尔值、对象和字符串值（没错，每个字符串也都有一个toString()方法，该方法返回字符串的一个副本）都有toString()方法。但null和undefined值没有这个方法;</li>
+<li>在调用数值的toString()方法时，可以传递一个参数：输出数值的基数;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">num.toString();     <span class="comment">// "10"</span></span><br><span class="line">num.toString(<span class="number">2</span>);    <span class="comment">// "1010"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>String()</strong><ul>
+<li>在不知道要转换的值是不是null或undefined的情况下，还可以使用转型函数String();</li>
+<li>String()函数遵循下列转换规则：<ul>
+<li>如果值有toString()方法，则调用该方法（没有参数）并返回相应的结果；</li>
+<li>如果值是null，则返回”null”；</li>
+<li>如果值是undefined，则返回”undefined”<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> var0;</span><br><span class="line"><span class="built_in">String</span>(num);    <span class="comment">// "10"</span></span><br><span class="line"><span class="built_in">String</span>(obj);    <span class="comment">// "null"</span></span><br><span class="line"><span class="built_in">String</span>(var0);   <span class="comment">// "undefined"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><ul>
+<li><p>ECMAScript中的对象其实就是一组数据和功能的集合;</p>
+</li>
+<li><p>可以通过执行new操作符后跟要创建的对象类型的名称来创建;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>;      <span class="comment">//有效，但不推荐省略圆括号</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object类型是所有它的实例的基础,就像Java中的java.lang.Object对象一样;</p>
+</li>
+<li><p>Object的每个实例都具有下列属性和方法:</p>
+<ul>
+<li><strong>Constructor</strong> : 保存着用于创建当前对象的函数</li>
+<li><strong>hasOwnProperty（propertyName）</strong> : 用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在</li>
+<li><strong>isPrototypeOf（object）</strong> : 用于检查传入的对象是否是另一个对象的原型</li>
+<li><strong>propertyIsEnumerable（propertyName）</strong> : 用于检查给定的属性是否能够使用for-in语句</li>
+<li><strong>toLocaleString()</strong> : 返回对象的字符串表示，该字符串与执行环境的地区对应</li>
+<li><strong>toString()</strong> ： 返回对象的字符串表示</li>
+<li><strong>valueOf()</strong> ： 返回对象的字符串、数值或布尔值表示。通常与toString()方法的返回值相同</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.field = <span class="string">"Field"</span></span><br><span class="line"></span><br><span class="line">obj.constructor;                    <span class="comment">// ƒ Object() &#123; [native code] &#125;</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">"field"</span>);        <span class="comment">// true</span></span><br><span class="line">obj.propertyIsEnumerable(<span class="string">"field"</span>);  <span class="comment">// true</span></span><br><span class="line">obj.toLocaleString();               <span class="comment">// "[object Object]"</span></span><br><span class="line">obj.toString();                     <span class="comment">// "[object Object]"</span></span><br></pre></td></tr></table></figure>
+<h2 id="typeof-检测数据类型"><a href="#typeof-检测数据类型" class="headerlink" title="typeof 检测数据类型"></a>typeof 检测数据类型</h2><p>对一个值使用typeof操作符可能返回下列某个字符串:  </p>
+<table>
+<thead>
+<tr>
+<th>返回字符串</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>值未定义</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>值是布尔值</td>
+</tr>
+<tr>
+<td>string</td>
+<td>值是字符串</td>
+</tr>
+<tr>
+<td>number</td>
+<td>值是数值</td>
+</tr>
+<tr>
+<td>object</td>
+<td>值是对象或null</td>
+</tr>
+<tr>
+<td>function</td>
+<td>值是函数</td>
+</tr>
+</tbody>
+</table>
+<p>注意，typeof是一个操作符而不是函数，因此例子中的圆括号尽管可以使用，但不是必需的;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">100</span>;     <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">"10"</span>;    <span class="comment">// "String"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;    <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -459,7 +670,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sql/" rel="tag"># SQL</a>
+            <a href="/tags/javascript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -472,8 +683,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/java/class对象/" rel="next" title="Class对象">
-                <i class="fa fa-chevron-left"></i> Class对象
+              <a href="/shell/awk/" rel="next" title="Awk">
+                <i class="fa fa-chevron-left"></i> Awk
               </a>
             
           </div>
@@ -481,10 +692,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/database/db2/db2数据库安装/" rel="prev" title="DB2数据库安装">
-                DB2数据库安装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -643,7 +850,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本要求"><span class="nav-number">1.</span> <span class="nav-text">基本要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写规范"><span class="nav-number">2.</span> <span class="nav-text">编写规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注释编写"><span class="nav-number">2.1.</span> <span class="nav-text">注释编写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段排列"><span class="nav-number">2.2.</span> <span class="nav-text">字段排列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子句排列"><span class="nav-number">2.3.</span> <span class="nav-text">子句排列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子句查询嵌套"><span class="nav-number">2.4.</span> <span class="nav-text">子句查询嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段别名"><span class="nav-number">2.5.</span> <span class="nav-text">字段别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表别名"><span class="nav-number">2.6.</span> <span class="nav-text">表别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊表命名规范"><span class="nav-number">2.7.</span> <span class="nav-text">特殊表命名规范</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Undefined"><span class="nav-number">1.1.</span> <span class="nav-text">Undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null"><span class="nav-number">1.2.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean"><span class="nav-number">1.3.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">1.4.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数"><span class="nav-number">1.4.1.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值范围"><span class="nav-number">1.4.2.</span> <span class="nav-text">数值范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NaN"><span class="nav-number">1.4.3.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值转换"><span class="nav-number">1.4.4.</span> <span class="nav-text">数值转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.5.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#其它类型转换为String"><span class="nav-number">1.5.1.</span> <span class="nav-text">其它类型转换为String</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object"><span class="nav-number">1.6.</span> <span class="nav-text">Object</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof-检测数据类型"><span class="nav-number">2.</span> <span class="nav-text">typeof 检测数据类型</span></a></li></ol></div>
             
 
           </div>
